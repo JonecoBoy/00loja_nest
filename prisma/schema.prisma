@@ -1,0 +1,133 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id         String    @id @default(uuid())
+  email      String    @unique
+  first_name String
+  last_name  String
+  cpf        String
+  role       Role
+  created_at DateTime  @default(now())
+  updated_at DateTime  @updatedAt
+  deletedAt  DateTime?
+
+  @@map("users")
+}
+
+model Customer {
+  id                  String             @id @default(uuid())
+  email               String             @unique
+  first_name          String
+  last_name           String
+  identification      Int                @unique
+  identification_type IdentificationType
+  orders              Order[]
+  created_at          DateTime           @default(now())
+  updated_at          DateTime           @updatedAt
+  deletedAt           DateTime?
+
+  @@map("customers")
+}
+
+model CustomerAddress {
+  id            String    @id @default(uuid())
+  description   String?
+  first_name    String
+  last_name     String
+  company       String
+  address_1     String
+  neighboorhood String?
+  city          String
+  state         String
+  country       String
+  postcode      String
+  created_at    DateTime  @default(now())
+  updated_at    DateTime  @updatedAt
+  deletedAt     DateTime?
+
+  @@map("customer_addresses")
+}
+
+model Order {
+  id             String          @id @default(uuid())
+  email          String          @unique
+  first_name     String
+  last_name      String
+  comment        String          @db.Text
+  order_products OrderProducts[]
+  created_at     DateTime        @default(now())
+  updated_at     DateTime        @updatedAt
+  deletedAt      DateTime?
+
+  Customer   Customer? @relation(fields: [customerId], references: [id])
+  customerId String?
+  @@map("orders")
+}
+
+model OrderProducts {
+  id         String    @id @default(uuid())
+  created_at DateTime  @default(now())
+  updated_at DateTime  @updatedAt
+  deletedAt  DateTime?
+
+  Order     Order?   @relation(fields: [orderId], references: [id])
+  orderId   String?
+  Product   Product? @relation(fields: [productId], references: [id])
+  productId String?
+
+  @@map("order_products")
+}
+
+model Product {
+  id             String          @id @default(uuid())
+  name           String
+  description    String?
+  sku            String?
+  price          Int
+  weight_unit    WeightUnit      @default(g)
+  weight         Float
+  length_unit    LengthUnit      @default(mm)
+  length         Float
+  width          Float
+  height         Float
+  minimum        Int             @default(1)
+  order_products OrderProducts[]
+  created_at     DateTime        @default(now())
+  updated_at     DateTime        @updatedAt
+  deletedAt      DateTime?
+}
+
+enum Role {
+  USER
+  ADMIN
+  STAFF
+}
+
+enum IdentificationType {
+  CPF
+  CNPJ
+  PASSPORT
+}
+
+enum WeightUnit {
+  g
+  kg
+  ton
+}
+
+enum LengthUnit {
+  mm
+  cm
+  m
+  km
+}
