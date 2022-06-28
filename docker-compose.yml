@@ -1,0 +1,12 @@
+version: '3.1'
+
+services:
+
+  db:
+    image: postgres:14.4-alpine
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: 00loja
+      POSTGRES_PASSWORD: password
