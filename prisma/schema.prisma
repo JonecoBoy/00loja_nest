@@ -5,6 +5,10 @@ generator client {
   provider = "prisma-client-js"
 }
 
+generator erd {
+  provider = "prisma-erd-generator"
+}
+
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
@@ -15,7 +19,6 @@ model User {
   email      String    @unique
   first_name String
   last_name  String
-  cpf        String
   role       Role
   created_at DateTime  @default(now())
   updated_at DateTime  @updatedAt
@@ -31,6 +34,7 @@ model Customer {
   last_name           String
   identification      Int                @unique
   identification_type IdentificationType
+  customer_addresses  CustomerAddress[]
   orders              Order[]
   created_at          DateTime           @default(now())
   updated_at          DateTime           @updatedAt
@@ -44,8 +48,10 @@ model CustomerAddress {
   description   String?
   first_name    String
   last_name     String
-  company       String
-  address_1     String
+  company       String?
+  street        String
+  number        Int?
+  complement    String?
   neighboorhood String?
   city          String
   state         String
@@ -54,57 +60,93 @@ model CustomerAddress {
   created_at    DateTime  @default(now())
   updated_at    DateTime  @updatedAt
   deletedAt     DateTime?
+  Customer      Customer? @relation(fields: [customerId], references: [id])
+  customerId    String?
 
   @@map("customer_addresses")
 }
 
 model Order {
-  id             String          @id @default(uuid())
-  email          String          @unique
-  first_name     String
-  last_name      String
-  comment        String          @db.Text
-  order_products OrderProducts[]
-  created_at     DateTime        @default(now())
-  updated_at     DateTime        @updatedAt
-  deletedAt      DateTime?
-
-  Customer   Customer? @relation(fields: [customerId], references: [id])
-  customerId String?
-  @@map("orders")
-}
-
-model OrderProducts {
   id         String    @id @default(uuid())
+  email      String    @unique
+  first_name String
+  last_name  String
+  comment    String    @db.Text
+  products   Product[]
   created_at DateTime  @default(now())
   updated_at DateTime  @updatedAt
   deletedAt  DateTime?
+  Customer   Customer? @relation(fields: [customerId], references: [id])
+  customerId String?
 
-  Order     Order?   @relation(fields: [orderId], references: [id])
-  orderId   String?
-  Product   Product? @relation(fields: [productId], references: [id])
-  productId String?
+  @@map("orders")
+}
 
-  @@map("order_products")
+model Discount {
+  id            String       @id @default(uuid())
+  discount_type DiscountType
+}
+
+model OrderTransaction {
+  id      String @id @default(uuid())
+  product String
 }
 
 model Product {
-  id             String          @id @default(uuid())
-  name           String
-  description    String?
-  sku            String?
-  price          Int
-  weight_unit    WeightUnit      @default(g)
-  weight         Float
-  length_unit    LengthUnit      @default(mm)
-  length         Float
-  width          Float
-  height         Float
-  minimum        Int             @default(1)
-  order_products OrderProducts[]
-  created_at     DateTime        @default(now())
-  updated_at     DateTime        @updatedAt
-  deletedAt      DateTime?
+  id                 String            @id @default(uuid())
+  name               String
+  description        String?
+  slug               String            @unique
+  prodcut_categories ProductCategory[]
+  sku                String?
+  price              Int
+  weight_unit        WeightUnit        @default(G)
+  weight             Float
+  length_unit        LengthUnit        @default(MM)
+  length             Float
+  width              Float
+  height             Float
+  minimum_amount     Int               @default(1)
+  images             Image[]
+  orders             Order[]
+  files              ProductFile[]
+  created_at         DateTime          @default(now())
+  updated_at         DateTime          @updatedAt
+  deletedAt          DateTime?
+
+  @@map("products")
+}
+
+model ProductCategory {
+  id            String    @id @default(uuid())
+  name          String
+  description   String?
+  slug          String    @unique
+  main_category String?
+  products      Product[]
+  image         Image[]
+
+  @@map("product_category")
+}
+
+model ProductFile {
+  id          String   @id @default(uuid())
+  name        String
+  description String?
+  url         String
+  Product     Product? @relation(fields: [productId], references: [id])
+  productId   String?
+}
+
+model Image {
+  id                String           @id @default(uuid())
+  name              String
+  description       String?
+  url               String
+  Product           Product?         @relation(fields: [productId], references: [id])
+  productId         String?
+  ProductCategory   ProductCategory? @relation(fields: [productCategoryId], references: [id])
+  productCategoryId String?
 }
 
 enum Role {
@@ -120,14 +162,26 @@ enum IdentificationType {
 }
 
 enum WeightUnit {
-  g
-  kg
-  ton
+  G
+  KG
+  TON
 }
 
 enum LengthUnit {
-  mm
-  cm
-  m
-  km
+  MM
+  CM
+  M
 }
+
+enum DiscountType {
+  PERCENTAGE
+  VALUE
+}
+
+enum ImageType {
+  COVER
+  BANNER
+  COMMON
+}
+
+// prisma migrate dev
