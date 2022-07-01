@@ -11,9 +11,10 @@ export class GenerateJwtUseCase
 
   async execute(input: GenerateJwtDto.Input): Promise<GenerateJwtDto.Output> {
     const payload = {
-      sub: input.user.login,
-      name: input.user.name,
-      type: input.user.type,
+      email: input.user.email,
+      first_name: input.user.first_name,
+      last_name: input.user.last_name,
+      role: input.user.role,
       aditionalData: input.aditionalData
     };
 

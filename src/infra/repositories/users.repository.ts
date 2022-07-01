@@ -16,11 +16,14 @@ export class UsersRepository {
   async findByUnique(userWhereUniqueInput: Prisma.UserWhereUniqueInput) {
     return null;
   }
-  // ): Promise<User | null> {
-  //   return this.prisma.user.findUnique({
-  //     where: userWhereUniqueInput
-  //   });
-  // }
+
+  async checkLogin(email: string, password: string) {
+    return await this.prisma.user.findFirst({
+      where: {
+        AND: [{ email }, { password }]
+      }
+    });
+  }
 
   async findMany(user: Prisma.UserCreateInput) {
     return await this.prisma.user;

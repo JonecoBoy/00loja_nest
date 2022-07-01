@@ -5,6 +5,7 @@ export namespace LoginUserDto {
   };
 
   export type Output = {
-    user: any;
+    user: object;
+    aditionalData?: any;
   };
 }
