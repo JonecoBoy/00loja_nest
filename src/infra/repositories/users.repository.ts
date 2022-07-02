@@ -1,16 +1,12 @@
 import { PrismaStrategy } from '../strategies/prisma/prisma.strategy';
 import { Prisma } from '@prisma/client';
-import { User } from '../../core/users/entities/user.entity';
-import { UserDataEntityMap } from '../mappers/user-data-entity.map';
 export class UsersRepository {
   constructor(private prisma: PrismaStrategy) {
     this.prisma = new PrismaStrategy();
   }
 
   async findAll() {
-    const teste = this.prisma.user.findMany();
-    const result = true; // UserDataEntityMap.DataToEntity();
-    return result;
+    return this.prisma.user.findMany();
   }
 
   async findByUnique(userWhereUniqueInput: Prisma.UserWhereUniqueInput) {
@@ -20,7 +16,15 @@ export class UsersRepository {
   async checkLogin(email: string, password: string) {
     return await this.prisma.user.findFirst({
       where: {
-        AND: [{ email }, { password }]
+        AND: [{ email }, { password }, { deleted_at: null }]
+      }
+    });
+  }
+
+  async checkUserDeleted(email: string) {
+    return await this.prisma.user.findFirst({
+      where: {
+        AND: [{ email }, { deleted_at: null }]
       }
     });
   }
@@ -35,6 +39,15 @@ export class UsersRepository {
         id
       }
     });
+  }
+  async findOneByEmail(email) {
+    const result = await this.prisma.user.findFirst({
+      where: {
+        AND: [{ email }, { deleted_at: null }]
+      }
+    });
+    const { password, ...rest } = result;
+    return rest;
   }
 
   async update(user: Prisma.UserUpdateInput) {

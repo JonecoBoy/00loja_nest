@@ -20,7 +20,7 @@ model User {
   password   String
   first_name String
   last_name  String
-  role       Role
+  roles      Role[]
   created_at DateTime  @default(now())
   updated_at DateTime  @updatedAt
   deleted_at DateTime?
@@ -34,6 +34,7 @@ model Customer {
   password            String
   first_name          String
   last_name           String
+  roles               Role[]
   identification      Int                @unique
   identification_type IdentificationType
   customer_addresses  CustomerAddress[]

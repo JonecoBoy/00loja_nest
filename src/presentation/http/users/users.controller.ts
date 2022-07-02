@@ -5,43 +5,25 @@ import {
   Body,
   Patch,
   Param,
-  Delete
+  Delete,
+  UseGuards,
+  SetMetadata,
+  Request
 } from '@nestjs/common';
 import { UsersService } from 'src/core/users/services/users.service';
-import { CreateUserDto } from './create-user.dto';
-import { UserListDto } from './list-user.dto';
+import { JwtAuthGuard } from 'src/presentation/auth/guards/jwt.guard';
+import { RolesGuard } from 'src/presentation/auth/guards/roles.guard';
+import { Roles } from 'src/presentation/auth/roles/role.decorator';
+import { Role } from 'src/presentation/auth/roles/role.enum';
 
 @Controller('users')
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
-  // @Get('abcv')
-  // async testeeee(@Body('source') entrada: any, @Body('target') campo: any) {
-  //   return await this.usersService.updateByUnique(entrada, campo);
-  // }
-
-  // @Post()
-  // async create(@Body() createUserDto: CreateUserDto) {
-  //   return await this.usersService.create(createUserDto);
-  // }
-  //: Promise<UserListDto.Response>
   @Get()
-  findAll() {
+  @Roles(Role.Admin)
+  @UseGuards(JwtAuthGuard, RolesGuard)
+  async findAll(@Request() req: any) {
     return this.usersService.findAll();
   }
-
-  // @Get(':id')
-  // async findOne(@Param('id') id: string) {
-  //   return await this.usersService.findOne(id);
-  // }
-
-  // // @Patch(':id')
-  // // update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
-  // //   return this.usersService.update(+id, updateUserDto);
-  // // }
-
-  // @Delete(':id')
-  // async remove(@Param('id') id: string) {
-  //   return await this.usersService.delete(id);
-  // }
 }

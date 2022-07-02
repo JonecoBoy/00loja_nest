@@ -14,7 +14,7 @@ export class GenerateJwtUseCase
       email: input.user.email,
       first_name: input.user.first_name,
       last_name: input.user.last_name,
-      role: input.user.role,
+      roles: input.user.roles,
       aditionalData: input.aditionalData
     };
 
