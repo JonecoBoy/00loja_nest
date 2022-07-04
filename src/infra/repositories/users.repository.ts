@@ -89,6 +89,7 @@ export class UsersRepository {
     if (!userNotDeleted) {
       return null;
     }
+    // o correto seria eu colocar um _old no final do email
     return await this.prisma.user.update({
       where: {
         id
