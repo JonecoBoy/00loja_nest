@@ -9,6 +9,7 @@ import { RolesGuard } from './auth/guards/roles.guard';
 import { BasicStrategy } from './auth/strategies/basic.strategy';
 import { JwtStrategy } from './auth/strategies/jwt.strategy';
 import { AuthController } from './http/auth/auth.controller';
+import { ListAllUsersAdapter } from './http/users/adapters/list-all-users.adapter';
 import { UsersController } from './http/users/users.controller';
 
 @Module({
@@ -20,7 +21,8 @@ import { UsersController } from './http/users/users.controller';
     BasicStrategy,
     JwtStrategy,
     RolesGuard,
-    UsersRepository
+    UsersRepository,
+    ListAllUsersAdapter
   ]
 })
 export class PresentationModule {}

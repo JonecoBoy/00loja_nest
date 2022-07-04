@@ -1,20 +1,20 @@
 import { ResultError } from 'src/presentation/error/result.error';
 import { Role } from '@prisma/client';
-type UserListDtoResponseItemType = {
+import { User } from 'src/core/users/user';
+
+export type UserListDtoResponseItemType = {
   id: string;
   email: string;
   first_name: string;
   last_name: string;
-  role?: Role;
+  roles?: Role[];
   created_at?: Date | null;
   updated_at?: Date | null;
-  deletedAt?: Date | null;
+  deleted_at?: Date | null;
 };
 
-type UserListDtoResponseType = {
-  data: UserListDtoResponseItemType[];
-};
+// export type UserListDtoResponseType = UserListDtoResponseItemType[];
 
 export namespace UserListDto {
-  export type Response = UserListDtoResponseItemType | ResultError;
+  export type Response = UserListDtoResponseItemType[] | ResultError;
 }

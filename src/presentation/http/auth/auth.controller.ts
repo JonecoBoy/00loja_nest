@@ -23,6 +23,7 @@ export class AuthController {
   //   isArray: false,
   //   description: 'Returns token'
   // })
+  @ApiBasicAuth()
   @Post()
   @UseGuards(BasicAuthGuard)
   async login(@Request() req): Promise<LoginDtoResponse | ResultErrorDto> {
