@@ -3,12 +3,11 @@ import {
   Get,
   Post,
   Body,
-  Patch,
   Param,
   Delete,
   UseGuards,
-  SetMetadata,
-  Request
+  Request,
+  Put
 } from '@nestjs/common';
 import {
   ApiBasicAuth,
@@ -22,25 +21,70 @@ import { RolesGuard } from 'src/presentation/auth/guards/roles.guard';
 import { Roles } from 'src/presentation/auth/roles/role.decorator';
 import { Role } from 'src/presentation/auth/roles/role.enum';
 import { ResultErrorDto } from 'src/presentation/error/error.dto';
+import { DeleteUserAdapter } from './adapters/delete-user.adapter';
+import { GetUserAdapter } from './adapters/get-user.adapter';
 import { ListAllUsersAdapter } from './adapters/list-all-users.adapter';
+import { UpdateUserAdapter } from './adapters/update-user.adapter';
 import { CreateUserDto } from './create-user.dto';
+import { DeleteUserDto } from './delete-user.dto';
+import { FindUserDto } from './find-user.dto';
 import { UserListDto } from './list-user.dto';
+import { UpdateUserDto } from './update-user.dto';
 
 @ApiTags('users')
 @Controller('users')
 export class UsersController {
   constructor(
     private readonly usersService: UsersService,
-    private readonly listAllUsersAdapter: ListAllUsersAdapter
+    private readonly listAllUsersAdapter: ListAllUsersAdapter,
+    private readonly getUserAdapter: GetUserAdapter,
+    private readonly deleteUserAdapter: DeleteUserAdapter,
+    private readonly updateUserAdapter: UpdateUserAdapter
   ) {}
 
+  @ApiResponse({
+    status: 201,
+    isArray: false,
+    description: 'User succesfully created'
+  })
+  @ApiResponse({
+    status: 401,
+    type: ResultErrorDto,
+    isArray: false,
+    description: 'Error user not created'
+  })
   @ApiBearerAuth()
   @Get()
-  @Roles(Role.Admin)
+  @Roles(Role.ADMIN)
   @UseGuards(JwtAuthGuard, RolesGuard)
   async findAll(@Request() req: Request): Promise<UserListDto.Response> {
     const modelResponse = await this.usersService.findAll();
     const dtoResponse = this.listAllUsersAdapter.modelToResponse(modelResponse);
+    return dtoResponse;
+  }
+
+  @ApiResponse({
+    status: 201,
+    type: FindUserDto.Request,
+    isArray: false,
+    description: 'User succesfully finded'
+  })
+  @ApiResponse({
+    status: 401,
+    type: ResultErrorDto,
+    isArray: false,
+    description: 'Error user not finded'
+  })
+  @ApiBearerAuth()
+  @Get(':id')
+  @Roles(Role.ADMIN)
+  @UseGuards(JwtAuthGuard, RolesGuard)
+  async findOne(
+    @Param() params: FindUserDto.Request
+  ): Promise<FindUserDto.Response> {
+    const { id } = params;
+    const modelResponse = await this.usersService.findOne(id);
+    const dtoResponse = this.getUserAdapter.modelToResponse(modelResponse);
     return dtoResponse;
   }
 
@@ -60,6 +104,56 @@ export class UsersController {
   async createUser(
     @Body() body: CreateUserDto.Request
   ): Promise<CreateUserDto.Response> {
-    return null;
+    const modelResponse = await this.usersService.createUser(body);
+    const dtoResponse = this.getUserAdapter.modelToResponse(modelResponse);
+    return dtoResponse;
+  }
+
+  @ApiResponse({
+    status: 201,
+    type: UpdateUserDto.Response,
+    isArray: false,
+    description: 'User succesfully edited'
+  })
+  @ApiResponse({
+    status: 401,
+    type: ResultErrorDto,
+    isArray: false,
+    description: 'Error user not edited'
+  })
+  @Put(':id')
+  @Roles(Role.ADMIN, Role.USER)
+  @UseGuards(JwtAuthGuard, RolesGuard)
+  async UpdateUserDto(
+    @Param() id: UpdateUserDto.RequestParam,
+    @Body() body: UpdateUserDto.RequestBody
+  ): Promise<UpdateUserDto.Response> {
+    const modelResponse = await this.usersService.updateByUnique(id, body);
+    const dtoResponse = this.updateUserAdapter.modelToResponse(modelResponse);
+    return dtoResponse;
+  }
+
+  @ApiResponse({
+    status: 201,
+    type: DeleteUserDto.Response,
+    isArray: false,
+    description: 'User succesfully deleted'
+  })
+  @ApiResponse({
+    status: 401,
+    type: ResultErrorDto,
+    isArray: false,
+    description: 'Error user not deleted'
+  })
+  @Roles(Role.ADMIN)
+  @UseGuards(JwtAuthGuard, RolesGuard)
+  @Delete(':id')
+  async deleteUser(
+    @Param() params: DeleteUserDto.Request
+  ): Promise<DeleteUserDto.Response> {
+    const { id } = params;
+    const modelResponse = await this.usersService.softDelete(id);
+    const dtoResponse = this.deleteUserAdapter.modelToResponse(modelResponse);
+    return dtoResponse;
   }
 }

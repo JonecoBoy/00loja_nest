@@ -9,7 +9,10 @@ import { RolesGuard } from './auth/guards/roles.guard';
 import { BasicStrategy } from './auth/strategies/basic.strategy';
 import { JwtStrategy } from './auth/strategies/jwt.strategy';
 import { AuthController } from './http/auth/auth.controller';
+import { DeleteUserAdapter } from './http/users/adapters/delete-user.adapter';
+import { GetUserAdapter } from './http/users/adapters/get-user.adapter';
 import { ListAllUsersAdapter } from './http/users/adapters/list-all-users.adapter';
+import { UpdateUserAdapter } from './http/users/adapters/update-user.adapter';
 import { UsersController } from './http/users/users.controller';
 
 @Module({
@@ -22,7 +25,10 @@ import { UsersController } from './http/users/users.controller';
     JwtStrategy,
     RolesGuard,
     UsersRepository,
-    ListAllUsersAdapter
+    ListAllUsersAdapter,
+    GetUserAdapter,
+    DeleteUserAdapter,
+    UpdateUserAdapter
   ]
 })
 export class PresentationModule {}

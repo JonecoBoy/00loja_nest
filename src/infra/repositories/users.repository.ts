@@ -1,5 +1,9 @@
 import { PrismaStrategy } from '../strategies/prisma/prisma.strategy';
 import { Prisma } from '@prisma/client';
+import { User } from 'src/core/users/user';
+import { CreateUserDto } from 'src/presentation/http/users/create-user.dto';
+import { HttpException, NotFoundException } from '@nestjs/common';
+import { Role } from 'src/presentation/auth/roles/role.enum';
 export class UsersRepository {
   constructor(private prisma: PrismaStrategy) {
     this.prisma = new PrismaStrategy();
@@ -34,9 +38,9 @@ export class UsersRepository {
   }
 
   async findOne(id: string) {
-    return await this.prisma.user.findUnique({
+    return await this.prisma.user.findFirst({
       where: {
-        id
+        AND: [{ id }, { deleted_at: null }]
       }
     });
   }
@@ -63,27 +67,35 @@ export class UsersRepository {
     });
   }
 
-  //softdelete
-  // async delete(id: string): Promise<User | null> {
-  //   const now = new Date(Date.now());
-  //   return await this.prisma.user.update({
-  //     where: {
-  //       id
-  //     },
-  //     data: {
-  //       deletedAt: now
-  //     }
-  //   });
-  // }
-
-  async remove() {
-    return true;
+  async create(user: CreateUserDto.Request) {
+    const userExists = await this.prisma.user.findUnique({
+      where: { email: user.email }
+    });
+    if (userExists) {
+      throw new HttpException('Email already registered', 400);
+    } else {
+      user.roles = [Role.USER];
+      return await this.prisma.user.create({ data: user });
+    }
   }
 
-  // async createUser(user: Prisma.UserCreateInput): Promise<User | null> {
-  //   const result = await this.prisma.user.create({
-  //     data: user
-  //   });
-  //   return result;
-  // }
+  async softDelete(id: string): Promise<User | null> {
+    const now = new Date(Date.now());
+    const userNotDeleted = await this.prisma.user.findFirst({
+      where: {
+        AND: [{ id }, { deleted_at: null }]
+      }
+    });
+    if (!userNotDeleted) {
+      return null;
+    }
+    return await this.prisma.user.update({
+      where: {
+        id
+      },
+      data: {
+        deleted_at: now
+      }
+    });
+  }
 }

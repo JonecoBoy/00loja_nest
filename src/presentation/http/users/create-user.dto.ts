@@ -1,5 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { Length, IsEmail } from 'class-validator';
+import { Role as RoleEnum } from 'src/presentation/auth/roles/role.enum';
+import { Role } from '@prisma/client';
 export namespace CreateUserDto {
   export class Request {
     @ApiProperty({
@@ -33,12 +35,17 @@ export namespace CreateUserDto {
     })
     @Length(2, 25)
     last_name: string;
+    roles: Role[];
   }
 
   export class Response {
-    status: 'ok';
+    id: string;
     email: string;
     first_name: string;
     last_name: string;
+    roles: Role[];
+    created_at: Date;
+    updated_at: Date;
+    deleted_at: Date;
   }
 }

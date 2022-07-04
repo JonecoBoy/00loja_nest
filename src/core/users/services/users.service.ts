@@ -1,17 +1,51 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { UsersRepository } from 'src/infra/repositories/users.repository';
 import { Prisma } from '@prisma/client';
+import { User } from '../user';
+import { CreateUserDto } from 'src/presentation/http/users/create-user.dto';
+import { UpdateUserDto } from 'src/presentation/http/users/update-user.dto';
 @Injectable()
 export class UsersService {
   constructor(private usersRepository: UsersRepository) {}
-  findAll() {
+  findAll(): Promise<Array<User>> {
     const result = this.usersRepository.findAll();
     return result;
   }
 
-  // async findOne(id: string) {
-  //   return await this.usersRepository.findOne(id);
-  // }
+  async findOne(id: string): Promise<User> {
+    const user = await this.usersRepository.findOne(id);
+    if (!user) {
+      throw new NotFoundException();
+    }
+    return user;
+  }
+
+  async softDelete(id: string): Promise<User> {
+    const user = await this.usersRepository.softDelete(id);
+    if (!user) {
+      throw new NotFoundException();
+    }
+    return user;
+  }
+
+  async createUser(input: CreateUserDto.Request): Promise<User> {
+    return await this.usersRepository.create(input);
+  }
+
+  async updateUser(id: string): Promise<User> {
+    const user = await this.usersRepository.softDelete(id);
+    if (!user) {
+      throw new NotFoundException();
+    }
+    return user;
+  }
+
+  async updateByUnique(
+    id: UpdateUserDto.RequestParam,
+    data: UpdateUserDto.RequestBody
+  ) {
+    return await this.usersRepository.updateByUnique(id, data);
+  }
 
   // async update() {
   //   return true;
