@@ -1,4 +1,4 @@
-import { Customer } from 'src/core/customer/costumer';
+import { Customer } from 'src/core/customer/customer';
 import { Product } from 'src/core/products/product';
 import { IBasePresentationAdapter } from '../../base-presentation.adapter';
 import {

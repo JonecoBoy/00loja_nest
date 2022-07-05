@@ -2,7 +2,7 @@ import { PrismaStrategy } from '../strategies/prisma/prisma.strategy';
 import { Prisma } from '@prisma/client';
 
 import { HttpException, NotFoundException } from '@nestjs/common';
-import { Customer } from 'src/core/customer/costumer';
+import { Customer } from 'src/core/customer/customer';
 import { CreateCustomerDto } from 'src/presentation/http/customers/create-customer.dto';
 export class CustomersRepository {
   constructor(private prisma: PrismaStrategy) {
@@ -35,16 +35,32 @@ export class CustomersRepository {
     });
   }
 
+  async exists(id: string) {
+    return await this.prisma.customer.findFirst({
+      where: {
+        AND: [{ id }, { deleted_at: null }]
+      },
+      include: {
+        customer_addresses: true
+      }
+    });
+  }
+
   async updateByUnique(
     { id },
     data: Prisma.CustomerUpdateInput | any
   ): Promise<Customer | null> {
-    return await this.prisma.customer.update({
-      where: {
-        id
-      },
-      data
-    });
+    const userExists = await this.findOne(id);
+    if (userExists) {
+      return await this.prisma.customer.update({
+        where: {
+          id
+        },
+        data
+      });
+    } else {
+      throw new NotFoundException();
+    }
   }
 
   async create(

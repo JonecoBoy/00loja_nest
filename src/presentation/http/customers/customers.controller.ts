@@ -21,7 +21,7 @@ import { DeleteCustomerDto } from './delete-customer.dto';
 import { UpdateCustomerDto } from './update-customer.dto';
 import { FindCustomerDto } from './find-customer.dto';
 import { CustomerListDto } from './list-customer.dto';
-import { Customer } from 'src/core/customer/costumer';
+import { Customer } from 'src/core/customer/customer';
 import { ListAllCustomersAdapter } from './adapters/list-all-customers.adapter';
 import { FindCustomerAdapter } from './adapters/find-product.adapter';
 

@@ -7,7 +7,7 @@ import {
   CustomerListDtoResponseItemType
 } from 'src/presentation/http/customers/list-customer.dto';
 import { UpdateCustomerDto } from 'src/presentation/http/customers/update-customer.dto';
-import { Customer } from '../costumer';
+import { Customer } from '../customer';
 @Injectable()
 export class CustomersService {
   constructor(private customersRepository: CustomersRepository) {}

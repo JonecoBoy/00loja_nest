@@ -32,6 +32,13 @@ export class ProductsRepository {
     { id },
     data: Prisma.ProductUpdateInput
   ): Promise<Product | null> {
+    const productExists = await this.prisma.product.findFirst({
+      where: { AND: [{ id }, { deleted_at: null }] }
+    });
+
+    if (!productExists) {
+      throw new NotFoundException();
+    }
     return await this.prisma.product.update({
       where: {
         id

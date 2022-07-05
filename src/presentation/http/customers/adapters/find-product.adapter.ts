@@ -1,4 +1,4 @@
-import { Customer } from 'src/core/customer/costumer';
+import { Customer } from 'src/core/customer/customer';
 import { IBasePresentationAdapter } from '../../base-presentation.adapter';
 import { FindCustomerDto } from '../find-customer.dto';
 export class FindCustomerAdapter
