@@ -6,15 +6,9 @@ import {
   Param,
   Delete,
   UseGuards,
-  Request,
   Put
 } from '@nestjs/common';
-import {
-  ApiBasicAuth,
-  ApiBearerAuth,
-  ApiResponse,
-  ApiTags
-} from '@nestjs/swagger';
+import { ApiBearerAuth, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { JwtAuthGuard } from 'src/presentation/auth/guards/jwt.guard';
 import { RolesGuard } from 'src/presentation/auth/guards/roles.guard';
 import { ResultErrorDto } from 'src/presentation/error/error.dto';
