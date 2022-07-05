@@ -17,23 +17,44 @@ import { UsersController } from './http/users/users.controller';
 import { ProductCategoriesController } from './http/product-categories/product-categories.controller';
 import { ProductCategoriesRepository } from 'src/infra/repositories/product-categories.repository';
 import { ProductCategoriesService } from 'src/core/product-categories/services/product-categories.service';
+import { ProductsController } from './http/products/products.controller';
+import { UpdateProductAdapter } from './http/products/adapters/update-product.adapter';
+import { FindProductAdapter } from './http/products/adapters/find-product.adapter';
+import { CreateProductAdapter } from './http/products/adapters/create-product.adapter';
+import { ListAllProductsAdapter } from './http/products/adapters/list-all-products.adapter';
+import { ProductsService } from 'src/core/products/services/products.service';
+import { ProductsRepository } from 'src/infra/repositories/products.repository';
+import { DeleteProductAdapter } from './http/products/adapters/delete-product.adapter';
 
+//todo remover e por em modulos separados users, products etc...
 @Module({
   imports: [RepositoriesModule, CoreModule, PassportModule],
-  controllers: [UsersController, AuthController, ProductCategoriesController],
+  controllers: [
+    UsersController,
+    AuthController,
+    ProductCategoriesController,
+    ProductsController
+  ],
   providers: [
     UsersService,
     ProductCategoriesService,
+    ProductsService,
     PrismaStrategy,
     BasicStrategy,
     JwtStrategy,
     RolesGuard,
     UsersRepository,
     ProductCategoriesRepository,
+    ProductsRepository,
     ListAllUsersAdapter,
     GetUserAdapter,
     DeleteUserAdapter,
-    UpdateUserAdapter
+    UpdateUserAdapter,
+    ListAllProductsAdapter,
+    CreateProductAdapter,
+    FindProductAdapter,
+    UpdateProductAdapter,
+    DeleteProductAdapter
   ]
 })
 export class PresentationModule {}
