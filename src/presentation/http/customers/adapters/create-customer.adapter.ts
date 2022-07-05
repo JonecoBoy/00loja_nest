@@ -1,4 +1,4 @@
-import { Customer } from 'src/core/customer/customer';
+import { Customer } from 'src/core/customers/customer';
 import { IBasePresentationAdapter } from '../../base-presentation.adapter';
 import { CreateCustomerDto } from '../create-customer.dto';
 export class CreateProductAdapter

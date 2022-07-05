@@ -2,7 +2,7 @@ import { ApiProperty } from '@nestjs/swagger';
 import { IsEmail, IsUUID, Length } from 'class-validator';
 import { IdentificationType, CustomerAddress } from '@prisma/client';
 
-export namespace DeleteCustomerDto {
+export namespace DeleteCustomerAddressDto {
   export class Request {
     @ApiProperty({
       required: true,
@@ -14,10 +14,19 @@ export namespace DeleteCustomerDto {
   }
   export class Response {
     id: string;
-    user_id: string;
-    identification: string;
-    identification_type: IdentificationType;
-    customer_addresses?: CustomerAddress[];
+    description: string;
+    first_name: string;
+    last_name: string;
+    company?: string;
+    street: string;
+    number: number;
+    complement: string;
+    neighboorhood: string;
+    city: string;
+    state: string;
+    country: string;
+    postcode: string;
+    customer_id: string;
     created_at: Date;
     updated_at: Date;
     deleted_at: Date;

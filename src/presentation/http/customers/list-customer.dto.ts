@@ -4,7 +4,7 @@ import { IdentificationType, CustomerAddress } from '@prisma/client';
 export type CustomerListDtoResponseItemType = {
   id: string;
   user_id: string;
-  identification: number;
+  identification: string;
   identification_type: IdentificationType;
   customer_addresses: CustomerAddress;
   created_at: Date;

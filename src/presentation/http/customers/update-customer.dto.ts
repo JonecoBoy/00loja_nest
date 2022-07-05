@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsArray, IsOptional, IsPositive, IsUUID } from 'class-validator';
+import { IsArray, IsOptional, IsString, IsUUID } from 'class-validator';
 import { CustomerAddress, IdentificationType } from '@prisma/client';
 
 export namespace UpdateCustomerDto {
@@ -27,9 +27,9 @@ export namespace UpdateCustomerDto {
       example: '12345678910',
       description: 'identity number'
     })
-    @IsPositive()
+    @IsString()
     @IsOptional()
-    identification?: number;
+    identification?: string;
 
     @ApiProperty({
       required: false,
@@ -51,7 +51,7 @@ export namespace UpdateCustomerDto {
   export class Response {
     id: string;
     user_id: string;
-    identification: number;
+    identification: string;
     identification_type: IdentificationType;
     customers_addresses?: CustomerAddress[];
     created_at: Date;

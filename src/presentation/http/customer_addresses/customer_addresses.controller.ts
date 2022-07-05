@@ -15,51 +15,51 @@ import { ResultErrorDto } from 'src/presentation/error/error.dto';
 import { CreateUserDto } from '../users/create-user.dto';
 import { Roles } from 'src/presentation/auth/roles/role.decorator';
 import { Role } from 'src/presentation/auth/roles/role.enum';
-import { CustomersService } from 'src/core/customers/services/customers.service';
-import { CreateCustomerDto } from './create-customer.dto';
-import { DeleteCustomerDto } from './delete-customer.dto';
-import { UpdateCustomerDto } from './update-customer.dto';
-import { FindCustomerDto } from './find-customer.dto';
-import { CustomerListDto } from './list-customer.dto';
-import { Customer } from 'src/core/customers/customer';
-import { ListAllCustomersAdapter } from './adapters/list-all-customers.adapter';
-import { FindCustomerAdapter } from './adapters/find-product.adapter';
+import { CreateCustomerAddressDto } from './create-customer_address.dto';
+import { CustomerAddressListDto } from './list-customer_address.dto';
+import { FindCustomerAddressDto } from './find-customer_address.dto';
+import { UpdateCustomerAddressDto } from './update-customer_address.dto';
+import { DeleteCustomerAddressDto } from './delete-customer_address.dto';
+import { CustomerAddressesService } from 'src/core/customer_addresses/services/customer_address.service';
+import { CustomerAddress } from '.prisma/client';
+import { ListAllCustomerAddressesAdapter } from './adapters/list-all-customer_addresses.adapter';
+import { FindCustomerAddressAdapter } from './adapters/find-customer_address.adapter';
 
-@ApiTags('customers')
-@Controller('customers')
-export class CustomersController {
+@ApiTags('customer_addresses')
+@Controller('customer_addresses')
+export class CustomerAddressesController {
   constructor(
-    private readonly customersService: CustomersService,
-    private readonly listAllCustomersAdapter: ListAllCustomersAdapter,
-    private readonly findCustomerAdapter: FindCustomerAdapter
+    private readonly customerAddressesService: CustomerAddressesService,
+    private readonly listAllCustomerAddressesAdapter: ListAllCustomerAddressesAdapter,
+    private readonly findCustomerAdressAdapter: FindCustomerAddressAdapter
   ) {}
 
   @ApiResponse({
     status: 201,
-    type: CreateCustomerDto.Response,
+    type: CreateCustomerAddressDto.Response,
     isArray: false,
-    description: 'Product succesfully created'
+    description: 'Customer address succesfully created'
   })
   @ApiResponse({
     status: 401,
     type: ResultErrorDto,
     isArray: false,
-    description: 'Product user not created'
+    description: 'Customer address user not created'
   })
   @ApiBearerAuth()
   @Get()
   @Roles(Role.ADMIN)
   @UseGuards(JwtAuthGuard, RolesGuard)
-  async findAll(): Promise<CustomerListDto.Response> {
-    const modelResponse = await this.customersService.findAll();
+  async findAll(): Promise<CustomerAddressListDto.Response> {
+    const modelResponse = await this.customerAddressesService.findAll();
     const dtoResponse =
-      this.listAllCustomersAdapter.modelToResponse(modelResponse);
+      this.listAllCustomerAddressesAdapter.modelToResponse(modelResponse);
     return dtoResponse;
   }
 
   @ApiResponse({
     status: 201,
-    type: CreateCustomerDto.Request,
+    type: CreateCustomerAddressDto.Request,
     isArray: false,
     description: 'Product succesfully finded'
   })
@@ -73,9 +73,11 @@ export class CustomersController {
   @Get(':id')
   @Roles(Role.ADMIN)
   @UseGuards(JwtAuthGuard, RolesGuard)
-  async findOne(@Param() params: any): Promise<FindCustomerDto.Response> {
+  async findOne(
+    @Param() params: any
+  ): Promise<FindCustomerAddressDto.Response> {
     const { id } = params;
-    return await this.customersService.findOne(id);
+    return await this.customerAddressesService.findOne(id);
   }
 
   @ApiResponse({
@@ -92,9 +94,9 @@ export class CustomersController {
   })
   @Post()
   async create(
-    @Body() body: CreateCustomerDto.Request
-  ): Promise<CreateCustomerDto.Response | Customer> {
-    const result = await this.customersService.create(body);
+    @Body() body: CreateCustomerAddressDto.Request
+  ): Promise<CreateCustomerAddressDto.Response | CustomerAddress> {
+    const result = await this.customerAddressesService.create(body);
     // const dtoResponse =
     //   this.createCustomerAdapter.modelToResponse(modelResponse);
     return result;
@@ -117,10 +119,13 @@ export class CustomersController {
   @Roles(Role.ADMIN, Role.USER)
   @UseGuards(JwtAuthGuard, RolesGuard)
   async update(
-    @Param() id: UpdateCustomerDto.RequestParam,
-    @Body() body: UpdateCustomerDto.RequestBody
-  ): Promise<UpdateCustomerDto.Response> {
-    const modelResponse = await this.customersService.updateByUnique(id, body);
+    @Param() id: UpdateCustomerAddressDto.RequestParam,
+    @Body() body: UpdateCustomerAddressDto.RequestBody
+  ): Promise<UpdateCustomerAddressDto.Response> {
+    const modelResponse = await this.customerAddressesService.updateByUnique(
+      id,
+      body
+    );
     // const dtoResponse =
     //   this.updateCustomerAdapter.modelToResponse(modelResponse);
     return modelResponse;
@@ -128,7 +133,7 @@ export class CustomersController {
 
   @ApiResponse({
     status: 201,
-    type: DeleteCustomerDto.Response,
+    type: DeleteCustomerAddressDto.Response,
     isArray: false,
     description: 'Product succesfully deleted'
   })
@@ -142,8 +147,10 @@ export class CustomersController {
   @UseGuards(JwtAuthGuard, RolesGuard)
   @ApiBearerAuth()
   @Delete(':id')
-  async delete(@Param() params: any): Promise<DeleteCustomerDto.Response> {
+  async delete(
+    @Param() params: any
+  ): Promise<DeleteCustomerAddressDto.Response> {
     const { id } = params;
-    return await this.customersService.softDelete(id);
+    return await this.customerAddressesService.softDelete(id);
   }
 }

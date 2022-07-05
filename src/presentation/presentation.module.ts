@@ -26,10 +26,15 @@ import { ProductsService } from 'src/core/products/services/products.service';
 import { ProductsRepository } from 'src/infra/repositories/products.repository';
 import { DeleteProductAdapter } from './http/products/adapters/delete-product.adapter';
 import { CustomersController } from './http/customers/customers.controller';
-import { CustomersService } from 'src/core/customer/services/customers.service';
+import { CustomersService } from 'src/core/customers/services/customers.service';
 import { CustomersRepository } from 'src/infra/repositories/customers.repository';
 import { ListAllCustomersAdapter } from './http/customers/adapters/list-all-customers.adapter';
 import { FindCustomerAdapter } from './http/customers/adapters/find-product.adapter';
+import { FindCustomerAddressAdapter } from './http/customer_addresses/adapters/find-customer_address.adapter';
+import { ListAllCustomerAddressesAdapter } from './http/customer_addresses/adapters/list-all-customer_addresses.adapter';
+import { CustomerAddressesService } from 'src/core/customer_addresses/services/customer_address.service';
+import { CustomerAddressesRepository } from 'src/infra/repositories/customer_addresses.repository';
+import { CustomerAddressesController } from './http/customer_addresses/customer_addresses.controller';
 
 //todo remover e por em modulos separados users, products etc...
 @Module({
@@ -39,13 +44,15 @@ import { FindCustomerAdapter } from './http/customers/adapters/find-product.adap
     AuthController,
     ProductCategoriesController,
     ProductsController,
-    CustomersController
+    CustomersController,
+    CustomerAddressesController
   ],
   providers: [
     UsersService,
     ProductCategoriesService,
     ProductsService,
     CustomersService,
+    CustomerAddressesService,
     PrismaStrategy,
     BasicStrategy,
     JwtStrategy,
@@ -54,6 +61,7 @@ import { FindCustomerAdapter } from './http/customers/adapters/find-product.adap
     ProductCategoriesRepository,
     ProductsRepository,
     CustomersRepository,
+    CustomerAddressesRepository,
     ListAllUsersAdapter,
     GetUserAdapter,
     DeleteUserAdapter,
@@ -64,7 +72,9 @@ import { FindCustomerAdapter } from './http/customers/adapters/find-product.adap
     UpdateProductAdapter,
     DeleteProductAdapter,
     ListAllCustomersAdapter,
-    FindCustomerAdapter
+    FindCustomerAdapter,
+    ListAllCustomerAddressesAdapter,
+    FindCustomerAddressAdapter
   ]
 })
 export class PresentationModule {}

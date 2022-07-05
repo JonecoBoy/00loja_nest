@@ -33,7 +33,7 @@ model Customer {
   id                  String              @id @default(uuid())
   user                User                @relation(fields: [user_id], references: [id])
   user_id             String              @unique
-  identification      BigInt              @unique
+  identification      String              @unique
   identification_type IdentificationType?
   customer_addresses  CustomerAddress[]
   created_at          DateTime            @default(now())

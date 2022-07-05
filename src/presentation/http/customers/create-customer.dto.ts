@@ -1,6 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import {
   IsArray,
+  isNumberString,
   IsObject,
   IsOptional,
   IsPositive,
@@ -29,8 +30,8 @@ export namespace CreateCustomerDto {
       example: '123.456.789-10',
       description: 'Identification number'
     })
-    @IsPositive()
-    identification: number;
+    @IsString()
+    identification: string;
 
     @ApiProperty({
       required: true,
@@ -53,7 +54,7 @@ export namespace CreateCustomerDto {
   export class Response {
     id: string;
     user_id: string;
-    identification: number;
+    identification: string;
     identification_type: IdentificationType;
     // customer_addresses?: CustomerAddress[];
     created_at: Date;

@@ -1,4 +1,4 @@
-import { Customer } from 'src/core/customer/customer';
+import { Customer } from 'src/core/customers/customer';
 import { IBasePresentationAdapter } from '../../base-presentation.adapter';
 import { DeleteCustomerDto } from '../delete-customer.dto';
 export class DeleteCustomerAdapter

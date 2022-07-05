@@ -2,7 +2,7 @@ import { PrismaStrategy } from '../strategies/prisma/prisma.strategy';
 import { Prisma } from '@prisma/client';
 
 import { HttpException, NotFoundException } from '@nestjs/common';
-import { Customer } from 'src/core/customer/customer';
+import { Customer } from 'src/core/customers/customer';
 import { CreateCustomerDto } from 'src/presentation/http/customers/create-customer.dto';
 export class CustomersRepository {
   constructor(private prisma: PrismaStrategy) {
