@@ -25,6 +25,11 @@ import { ListAllProductsAdapter } from './http/products/adapters/list-all-produc
 import { ProductsService } from 'src/core/products/services/products.service';
 import { ProductsRepository } from 'src/infra/repositories/products.repository';
 import { DeleteProductAdapter } from './http/products/adapters/delete-product.adapter';
+import { CustomersController } from './http/customers/customers.controller';
+import { CustomersService } from 'src/core/customer/services/customers.service';
+import { CustomersRepository } from 'src/infra/repositories/customers.repository';
+import { ListAllCustomersAdapter } from './http/customers/adapters/list-all-customers.adapter';
+import { FindCustomerAdapter } from './http/customers/adapters/find-product.adapter';
 
 //todo remover e por em modulos separados users, products etc...
 @Module({
@@ -33,12 +38,14 @@ import { DeleteProductAdapter } from './http/products/adapters/delete-product.ad
     UsersController,
     AuthController,
     ProductCategoriesController,
-    ProductsController
+    ProductsController,
+    CustomersController
   ],
   providers: [
     UsersService,
     ProductCategoriesService,
     ProductsService,
+    CustomersService,
     PrismaStrategy,
     BasicStrategy,
     JwtStrategy,
@@ -46,6 +53,7 @@ import { DeleteProductAdapter } from './http/products/adapters/delete-product.ad
     UsersRepository,
     ProductCategoriesRepository,
     ProductsRepository,
+    CustomersRepository,
     ListAllUsersAdapter,
     GetUserAdapter,
     DeleteUserAdapter,
@@ -54,7 +62,9 @@ import { DeleteProductAdapter } from './http/products/adapters/delete-product.ad
     CreateProductAdapter,
     FindProductAdapter,
     UpdateProductAdapter,
-    DeleteProductAdapter
+    DeleteProductAdapter,
+    ListAllCustomersAdapter,
+    FindCustomerAdapter
   ]
 })
 export class PresentationModule {}

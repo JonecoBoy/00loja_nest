@@ -24,24 +24,22 @@ model User {
   created_at DateTime  @default(now())
   updated_at DateTime  @updatedAt
   deleted_at DateTime?
+  customer   Customer?
 
   @@map("users")
 }
 
 model Customer {
-  id                  String             @id @default(uuid())
-  email               String             @unique
-  password            String
-  first_name          String
-  last_name           String
-  roles               Role[]
-  identification      Int                @unique
-  identification_type IdentificationType
+  id                  String              @id @default(uuid())
+  user                User                @relation(fields: [user_id], references: [id])
+  user_id             String              @unique
+  identification      BigInt              @unique
+  identification_type IdentificationType?
   customer_addresses  CustomerAddress[]
-  orders              Order[]
-  created_at          DateTime           @default(now())
-  updated_at          DateTime           @updatedAt
+  created_at          DateTime            @default(now())
+  updated_at          DateTime            @updatedAt
   deleted_at          DateTime?
+  Order               Order[]
 
   @@map("customers")
 }
@@ -60,27 +58,30 @@ model CustomerAddress {
   state         String
   country       String
   postcode      String
-  Customer      Customer? @relation(fields: [customerId], references: [id])
-  customerId    String?
+  Customer      Customer? @relation(fields: [customer_id], references: [id])
+  customer_id   String?
   created_at    DateTime  @default(now())
   updated_at    DateTime  @updatedAt
   deleted_at    DateTime?
 
+  Order Order[]
   @@map("customer_addresses")
 }
 
 model Order {
-  id         String    @id @default(uuid())
-  email      String    @unique
-  first_name String
-  last_name  String
-  comment    String    @db.Text
-  products   Product[]
-  Customer   Customer? @relation(fields: [customerId], references: [id])
-  customerId String?
-  created_at DateTime  @default(now())
-  updated_at DateTime  @updatedAt
-  deleted_at DateTime?
+  id                  String          @id @default(uuid())
+  email               String          @unique
+  first_name          String
+  last_name           String
+  comment             String          @db.Text
+  products            Product[]
+  customer            Customer        @relation(fields: [customer_id], references: [id])
+  customer_id         String
+  customer_address    CustomerAddress @relation(fields: [customer_address_id], references: [id])
+  customer_address_id String
+  created_at          DateTime        @default(now())
+  updated_at          DateTime        @updatedAt
+  deleted_at          DateTime?
 
   @@map("orders")
 }
@@ -117,12 +118,11 @@ model Product {
   minimum_amount     Int               @default(1)
   images             Image[]
   files              ProductFile[]
+  products           Order[]
   created_at         DateTime          @default(now())
   updated_at         DateTime          @updatedAt
   deleted_at         DateTime?
 
-  Order   Order?  @relation(fields: [orderId], references: [id])
-  orderId String?
   @@map("products")
 }
 
@@ -146,8 +146,8 @@ model ProductFile {
   name        String
   description String?
   url         String
-  Product     Product?  @relation(fields: [productId], references: [id])
-  productId   String?
+  Product     Product?  @relation(fields: [product_id], references: [id])
+  product_id  String?
   created_at  DateTime  @default(now())
   updated_at  DateTime  @updatedAt
   deleted_at  DateTime?
@@ -156,17 +156,17 @@ model ProductFile {
 }
 
 model Image {
-  id                String           @id @default(uuid())
-  name              String
-  description       String?
-  url               String
-  Product           Product?         @relation(fields: [productId], references: [id])
-  productId         String?
-  ProductCategory   ProductCategory? @relation(fields: [productCategoryId], references: [id])
-  productCategoryId String?
-  created_at        DateTime         @default(now())
-  updated_at        DateTime         @updatedAt
-  deleted_at        DateTime?
+  id                  String           @id @default(uuid())
+  name                String
+  description         String?
+  url                 String
+  Product             Product?         @relation(fields: [product_id], references: [id])
+  product_id          String?
+  ProductCategory     ProductCategory? @relation(fields: [product_category_id], references: [id])
+  product_category_id String?
+  created_at          DateTime         @default(now())
+  updated_at          DateTime         @updatedAt
+  deleted_at          DateTime?
 
   @@map("images")
 }
