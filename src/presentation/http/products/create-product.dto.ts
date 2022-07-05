@@ -43,6 +43,10 @@ export namespace CreateProductDto {
     @IsString()
     sku: string;
 
+    @IsArray()
+    @IsOptional()
+    product_categories?: ProductCategory[];
+
     @ApiProperty({
       required: true,
       example: '200',
@@ -108,12 +112,13 @@ export namespace CreateProductDto {
     name: string;
     description: string;
     slug: string;
+    product_categories?: any[];
     sku: string;
     price: number;
     weight_unit: string;
     weight: number;
     length_unit: LengthUnit;
-    lengt: number;
+    length: number;
     width: number;
     height: number;
     minimum_amount: number;

@@ -28,9 +28,9 @@ export class ProductsService {
     return productCategory;
   }
 
-  async createProductCategory(
+  async createProduct(
     input: CreateProductDto.Request
-  ): Promise<Product> {
+  ): Promise<Product | CreateProductDto.Response> {
     return await this.productsRepository.create(input);
   }
 

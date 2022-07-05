@@ -101,29 +101,29 @@ model Discount {
 // }
 
 model Product {
-  id                  String            @id @default(uuid())
-  name                String
-  description         String?
-  slug                String            @unique
-  products_categories ProductCategory[]
-  sku                 String?
-  price               Int
-  weight_unit         WeightUnit        @default(G)
-  weight              Float
-  length_unit         LengthUnit        @default(MM)
-  length              Float
-  width               Float
-  height              Float
-  minimum_amount      Int               @default(1)
-  images              Image[]
-  files               ProductFile[]
-  created_at          DateTime          @default(now())
-  updated_at          DateTime          @updatedAt
-  deleted_at          DateTime?
+  id                 String            @id @default(uuid())
+  name               String
+  description        String?
+  slug               String            @unique
+  product_categories ProductCategory[]
+  sku                String?
+  price              Int
+  weight_unit        WeightUnit        @default(G)
+  weight             Float
+  length_unit        LengthUnit        @default(MM)
+  length             Float
+  width              Float
+  height             Float
+  minimum_amount     Int               @default(1)
+  images             Image[]
+  files              ProductFile[]
+  created_at         DateTime          @default(now())
+  updated_at         DateTime          @updatedAt
+  deleted_at         DateTime?
 
-  @@map("products")
   Order   Order?  @relation(fields: [orderId], references: [id])
   orderId String?
+  @@map("products")
 }
 
 model ProductCategory {

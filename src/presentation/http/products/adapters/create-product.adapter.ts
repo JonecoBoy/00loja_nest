@@ -4,18 +4,21 @@ import { CreateProductDto } from '../create-product.dto';
 export class CreateProductAdapter
   implements IBasePresentationAdapter<Product, CreateProductDto.Response>
 {
-  public modelToResponse(product: Product): CreateProductDto.Response {
+  public modelToResponse(
+    product: CreateProductDto.Response
+  ): CreateProductDto.Response {
     return {
       id: product.id,
       name: product.name,
       description: product.description,
       slug: product.slug,
       sku: product.sku,
+      product_categories: product.product_categories,
       price: product.price,
       weight_unit: product.weight_unit,
       weight: product.weight,
       length_unit: product.length_unit,
-      lengt: product.length,
+      length: product.length,
       width: product.width,
       height: product.height,
       minimum_amount: product.minimum_amount,

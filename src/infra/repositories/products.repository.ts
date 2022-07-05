@@ -40,17 +40,32 @@ export class ProductsRepository {
     });
   }
 
-  async create(product: CreateProductDto.Request): Promise<Product | null> {
+  async create(
+    product: CreateProductDto.Request
+  ): Promise<CreateProductDto.Response | null> {
+    const { product_categories, ...rest } = product;
     const productExists = await this.prisma.product.findFirst({
       where: { AND: [{ slug: product.slug }, { deleted_at: null }] }
     });
     if (productExists) {
       throw new HttpException('Slug already in use', 400);
     } else {
-      return await this.prisma.product.create({
-        data: product
+      const teste = await this.prisma.product.create({
+        data: {
+          ...rest,
+          product_categories: {
+            connect: product_categories
+          }
+        },
+        include: {
+          product_categories: true // Include all posts in the returned object
+        }
       });
+      console.log(teste);
+      return teste;
     }
+
+    return null;
   }
 
   async softDelete(id: string): Promise<Product | null> {

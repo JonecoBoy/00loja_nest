@@ -107,4 +107,24 @@ export class ProductCategoriesRepository {
       }
     });
   }
+
+  async update2(
+    { id },
+    data: Prisma.ProductCategoryUpdateInput
+  ): Promise<ProductCategory | null> {
+    return await this.prisma.productCategory.update({
+      where: {
+        id
+      },
+      data: {
+        products: {
+          connect: [
+            {
+              id: 'a8b75d52-1685-4e15-a787-53937f2fcfc2'
+            }
+          ]
+        }
+      }
+    });
+  }
 }

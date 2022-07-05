@@ -107,12 +107,10 @@ export class ProductsController {
   async create(
     @Body() body: CreateProductDto.Request
   ): Promise<CreateProductDto.Response> {
-    const modelResponse = await this.productsService.createProductCategory(
-      body
-    );
-    const dtoResponse =
-      this.createProductAdapter.modelToResponse(modelResponse);
-    return dtoResponse;
+    const result = await this.productsService.createProduct(body);
+    // const dtoResponse =
+    //   this.createProductAdapter.modelToResponse(modelResponse);
+    return result;
   }
 
   @ApiResponse({
