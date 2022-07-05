@@ -121,6 +121,7 @@ export class UsersController {
     isArray: false,
     description: 'Error user not edited'
   })
+  @ApiBearerAuth()
   @Put(':id')
   @Roles(Role.ADMIN, Role.USER)
   @UseGuards(JwtAuthGuard, RolesGuard)
@@ -147,6 +148,7 @@ export class UsersController {
   })
   @Roles(Role.ADMIN)
   @UseGuards(JwtAuthGuard, RolesGuard)
+  @ApiBearerAuth()
   @Delete(':id')
   async deleteUser(
     @Param() params: DeleteUserDto.Request

@@ -60,11 +60,11 @@ model CustomerAddress {
   state         String
   country       String
   postcode      String
+  Customer      Customer? @relation(fields: [customerId], references: [id])
+  customerId    String?
   created_at    DateTime  @default(now())
   updated_at    DateTime  @updatedAt
   deleted_at    DateTime?
-  Customer      Customer? @relation(fields: [customerId], references: [id])
-  customerId    String?
 
   @@map("customer_addresses")
 }
@@ -76,11 +76,11 @@ model Order {
   last_name  String
   comment    String    @db.Text
   products   Product[]
+  Customer   Customer? @relation(fields: [customerId], references: [id])
+  customerId String?
   created_at DateTime  @default(now())
   updated_at DateTime  @updatedAt
   deleted_at DateTime?
-  Customer   Customer? @relation(fields: [customerId], references: [id])
-  customerId String?
 
   @@map("orders")
 }
@@ -88,12 +88,17 @@ model Order {
 model Discount {
   id            String       @id @default(uuid())
   discount_type DiscountType
+
+  @@map("discounts")
 }
 
-model OrderTransaction {
-  id      String @id @default(uuid())
-  product String
-}
+// model OrderTransaction {
+//   id      String @id @default(uuid())
+//   product String
+// created_at DateTime  @default(now())
+// updated_at DateTime  @updatedAt
+// deleted_at DateTime?
+// }
 
 model Product {
   id                 String            @id @default(uuid())
@@ -128,17 +133,25 @@ model ProductCategory {
   main_category String?
   products      Product[]
   image         Image[]
+  created_at    DateTime  @default(now())
+  updated_at    DateTime  @updatedAt
+  deleted_at    DateTime?
 
-  @@map("product_category")
+  @@map("product_categories")
 }
 
 model ProductFile {
-  id          String   @id @default(uuid())
+  id          String    @id @default(uuid())
   name        String
   description String?
   url         String
-  Product     Product? @relation(fields: [productId], references: [id])
+  Product     Product?  @relation(fields: [productId], references: [id])
   productId   String?
+  created_at  DateTime  @default(now())
+  updated_at  DateTime  @updatedAt
+  deleted_at  DateTime?
+
+  @@map("product_files")
 }
 
 model Image {
@@ -150,6 +163,11 @@ model Image {
   productId         String?
   ProductCategory   ProductCategory? @relation(fields: [productCategoryId], references: [id])
   productCategoryId String?
+  created_at        DateTime         @default(now())
+  updated_at        DateTime         @updatedAt
+  deleted_at        DateTime?
+
+  @@map("images")
 }
 
 enum Role {
