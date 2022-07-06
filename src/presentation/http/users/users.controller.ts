@@ -64,8 +64,8 @@ export class UsersController {
   }
 
   @ApiResponse({
-    status: 201,
-    type: FindUserDto.Request,
+    status: 200,
+    type: FindUserDto.Response,
     isArray: false,
     description: 'User succesfully finded'
   })
@@ -110,7 +110,7 @@ export class UsersController {
   }
 
   @ApiResponse({
-    status: 201,
+    status: 200,
     type: UpdateUserDto.Response,
     isArray: false,
     description: 'User succesfully edited'
@@ -123,7 +123,7 @@ export class UsersController {
   })
   @ApiBearerAuth()
   @Put(':id')
-  @Roles(Role.ADMIN, Role.USER)
+  @Roles(Role.ADMIN)
   @UseGuards(JwtAuthGuard, RolesGuard)
   async UpdateUserDto(
     @Param() id: UpdateUserDto.RequestParam,
@@ -135,8 +135,7 @@ export class UsersController {
   }
 
   @ApiResponse({
-    status: 201,
-    type: DeleteUserDto.Response,
+    status: 200,
     isArray: false,
     description: 'User succesfully deleted'
   })
