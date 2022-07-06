@@ -43,6 +43,7 @@ import { UpdateCustomerAdapter } from './http/customer_addresses/adapters/update
 import { UpdateOrderAdapter } from './http/orders/adapters/update-order.adapter';
 import { FindOrderAdapter } from './http/orders/adapters/find-order.adapter';
 import { DeleteOrderAdapter } from './http/orders/adapters/delete-order.adapter';
+import { HashPasswordUsecase } from 'src/core/users/usecases/hash-password.usecase';
 
 //todo remover e por em modulos separados users, products etc...
 @Module({
@@ -90,7 +91,8 @@ import { DeleteOrderAdapter } from './http/orders/adapters/delete-order.adapter'
     UpdateCustomerAdapter,
     UpdateOrderAdapter,
     FindOrderAdapter,
-    DeleteOrderAdapter
+    DeleteOrderAdapter,
+    HashPasswordUsecase
   ]
 })
 export class PresentationModule {}

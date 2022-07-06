@@ -4,9 +4,13 @@ import { Prisma } from '@prisma/client';
 import { User } from '../user';
 import { CreateUserDto } from 'src/presentation/http/users/create-user.dto';
 import { UpdateUserDto } from 'src/presentation/http/users/update-user.dto';
+import { HashPasswordUsecase } from '../usecases/hash-password.usecase';
 @Injectable()
 export class UsersService {
-  constructor(private usersRepository: UsersRepository) {}
+  constructor(
+    private usersRepository: UsersRepository,
+    private readonly hashPasswordUseCase: HashPasswordUsecase
+  ) {}
   findAll(): Promise<Array<User>> {
     const result = this.usersRepository.findAll();
     return result;
@@ -29,7 +33,10 @@ export class UsersService {
   }
 
   async createUser(input: CreateUserDto.Request): Promise<User> {
-    return await this.usersRepository.create(input);
+    const { password, ...rest } = input;
+    const hashedPasword = await this.hashPasswordUseCase.execute(password);
+    const userHashedPass = { password: hashedPasword, ...rest };
+    return await this.usersRepository.create(userHashedPass);
   }
 
   async updateUser(id: string): Promise<User> {

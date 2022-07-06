@@ -50,8 +50,8 @@ export class UsersRepository {
         AND: [{ email }, { deleted_at: null }]
       }
     });
-    const { password, ...rest } = result;
-    return rest;
+
+    return result;
   }
 
   async update(user: Prisma.UserUpdateInput) {
