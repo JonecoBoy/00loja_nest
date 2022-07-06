@@ -70,10 +70,7 @@ model CustomerAddress {
 
 model Order {
   id                  String          @id @default(uuid())
-  email               String          @unique
-  first_name          String
-  last_name           String
-  comment             String          @db.Text
+  comment             String?         @db.Text
   products            Product[]
   customer            Customer        @relation(fields: [customer_id], references: [id])
   customer_id         String

@@ -35,6 +35,14 @@ import { ListAllCustomerAddressesAdapter } from './http/customer_addresses/adapt
 import { CustomerAddressesService } from 'src/core/customer_addresses/services/customer_address.service';
 import { CustomerAddressesRepository } from 'src/infra/repositories/customer_addresses.repository';
 import { CustomerAddressesController } from './http/customer_addresses/customer_addresses.controller';
+import { OrdersController } from './http/orders/orders.controller';
+import { OrdersService } from 'src/core/orders/services/orders.service';
+import { OrdersRepository } from 'src/infra/repositories/orders.repository';
+import { ListAllOrdersAdapter } from './http/orders/adapters/list-all-orders.adapter';
+import { UpdateCustomerAdapter } from './http/customer_addresses/adapters/update-customer.adapter';
+import { UpdateOrderAdapter } from './http/orders/adapters/update-order.adapter';
+import { FindOrderAdapter } from './http/orders/adapters/find-order.adapter';
+import { DeleteOrderAdapter } from './http/orders/adapters/delete-order.adapter';
 
 //todo remover e por em modulos separados users, products etc...
 @Module({
@@ -45,7 +53,8 @@ import { CustomerAddressesController } from './http/customer_addresses/customer_
     ProductCategoriesController,
     ProductsController,
     CustomersController,
-    CustomerAddressesController
+    CustomerAddressesController,
+    OrdersController
   ],
   providers: [
     UsersService,
@@ -53,6 +62,7 @@ import { CustomerAddressesController } from './http/customer_addresses/customer_
     ProductsService,
     CustomersService,
     CustomerAddressesService,
+    OrdersService,
     PrismaStrategy,
     BasicStrategy,
     JwtStrategy,
@@ -62,6 +72,7 @@ import { CustomerAddressesController } from './http/customer_addresses/customer_
     ProductsRepository,
     CustomersRepository,
     CustomerAddressesRepository,
+    OrdersRepository,
     ListAllUsersAdapter,
     GetUserAdapter,
     DeleteUserAdapter,
@@ -74,7 +85,12 @@ import { CustomerAddressesController } from './http/customer_addresses/customer_
     ListAllCustomersAdapter,
     FindCustomerAdapter,
     ListAllCustomerAddressesAdapter,
-    FindCustomerAddressAdapter
+    FindCustomerAddressAdapter,
+    ListAllOrdersAdapter,
+    UpdateCustomerAdapter,
+    UpdateOrderAdapter,
+    FindOrderAdapter,
+    DeleteOrderAdapter
   ]
 })
 export class PresentationModule {}

@@ -1,16 +1,10 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { CustomerAddress, Prisma } from '@prisma/client';
+import { Prisma } from '@prisma/client';
 import { CustomerAddressesRepository } from 'src/infra/repositories/customer_addresses.repository';
-import { CreateCustomerDto } from 'src/presentation/http/customers/create-customer.dto';
-import {
-  CustomerListDto,
-  CustomerListDtoResponseItemType
-} from 'src/presentation/http/customers/list-customer.dto';
-import { UpdateCustomerDto } from 'src/presentation/http/customers/update-customer.dto';
 import { CreateCustomerAddressDto } from 'src/presentation/http/customer_addresses/create-customer_address.dto';
 import { CustomerAddressListDtoResponseItemType } from 'src/presentation/http/customer_addresses/list-customer_address.dto';
 import { UpdateCustomerAddressDto } from 'src/presentation/http/customer_addresses/update-customer_address.dto';
-import { Customer } from '../customer';
+import { CustomerAddress } from '../customerAddress';
 @Injectable()
 export class CustomerAddressesService {
   constructor(
