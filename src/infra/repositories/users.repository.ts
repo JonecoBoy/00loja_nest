@@ -1,8 +1,8 @@
 import { PrismaStrategy } from '../strategies/prisma/prisma.strategy';
 import { Prisma } from '@prisma/client';
-import { User } from 'src/core/users/user';
 import { CreateUserDto } from 'src/presentation/http/users/create-user.dto';
 import { HttpException, NotFoundException } from '@nestjs/common';
+import { User } from 'src/core/users/user';
 import { Role } from 'src/presentation/auth/roles/role.enum';
 export class UsersRepository {
   constructor(private prisma: PrismaStrategy) {

@@ -9,13 +9,13 @@ import {
   Put
 } from '@nestjs/common';
 import { ApiBearerAuth, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { JwtAuthGuard } from 'src/presentation/auth/guards/jwt.guard';
-import { RolesGuard } from 'src/presentation/auth/guards/roles.guard';
-import { ResultErrorDto } from 'src/presentation/error/error.dto';
+import { JwtAuthGuard } from '../../auth/guards/jwt.guard';
+import { RolesGuard } from '../../auth/guards/roles.guard';
+import { ResultErrorDto } from '../../error/error.dto';
 import { CreateUserDto } from '../users/create-user.dto';
-import { Roles } from 'src/presentation/auth/roles/role.decorator';
-import { Role } from 'src/presentation/auth/roles/role.enum';
-import { CustomersService } from 'src/core/customers/services/customers.service';
+import { Roles } from '../../auth/roles/role.decorator';
+import { Role } from '../../auth/roles/role.enum';
+import { CustomersService } from '../../../core/customers/services/customers.service';
 import { CreateCustomerDto } from './create-customer.dto';
 import { DeleteCustomerDto } from './delete-customer.dto';
 import { UpdateCustomerDto } from './update-customer.dto';
@@ -37,7 +37,7 @@ export class CustomersController {
   @ApiResponse({
     status: 201,
     type: CreateCustomerDto.Response,
-    isArray: false,
+    isArray: true,
     description: 'Product succesfully created'
   })
   @ApiResponse({
@@ -91,12 +91,13 @@ export class CustomersController {
     description: 'Error Product not created'
   })
   @Post()
+  @Roles(Role.USER, Role.ADMIN)
+  @UseGuards(JwtAuthGuard, RolesGuard)
   async create(
     @Body() body: CreateCustomerDto.Request
   ): Promise<CreateCustomerDto.Response | Customer> {
     const result = await this.customersService.create(body);
-    // const dtoResponse =
-    //   this.createCustomerAdapter.modelToResponse(modelResponse);
+
     return result;
   }
 

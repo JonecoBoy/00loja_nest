@@ -9,14 +9,17 @@ import {
   Put
 } from '@nestjs/common';
 import { ApiBearerAuth, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { JwtAuthGuard } from 'src/presentation/auth/guards/jwt.guard';
-import { RolesGuard } from 'src/presentation/auth/guards/roles.guard';
-import { ResultErrorDto } from 'src/presentation/error/error.dto';
+import { JwtAuthGuard } from '../../auth/guards/jwt.guard';
+import { RolesGuard } from '../../auth/guards/roles.guard';
+import { ResultErrorDto } from '../../error/error.dto';
 import { CreateUserDto } from '../users/create-user.dto';
-import { Roles } from 'src/presentation/auth/roles/role.decorator';
-import { Role } from 'src/presentation/auth/roles/role.enum';
+import { Roles } from '../../auth/roles/role.decorator';
+import { Role } from '../../auth/roles/role.enum';
 import { CreateCustomerAddressDto } from './create-customer_address.dto';
-import { CustomerAddressListDto } from './list-customer_address.dto';
+import {
+  CustomerAddressListDto,
+  CustomerAddressListDtoResponseItemType
+} from './list-customer_address.dto';
 import { FindCustomerAddressDto } from './find-customer_address.dto';
 import { UpdateCustomerAddressDto } from './update-customer_address.dto';
 import { DeleteCustomerAddressDto } from './delete-customer_address.dto';
@@ -59,7 +62,7 @@ export class CustomerAddressesController {
 
   @ApiResponse({
     status: 201,
-    type: CreateCustomerAddressDto.Request,
+    type: CreateCustomerAddressDto.Response,
     isArray: false,
     description: 'Product succesfully finded'
   })
@@ -93,6 +96,8 @@ export class CustomerAddressesController {
     description: 'Error Product not created'
   })
   @Post()
+  @Roles(Role.USER, Role.ADMIN)
+  @UseGuards(JwtAuthGuard, RolesGuard)
   async create(
     @Body() body: CreateCustomerAddressDto.Request
   ): Promise<CreateCustomerAddressDto.Response | CustomerAddress> {

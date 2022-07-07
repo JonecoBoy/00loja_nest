@@ -1,4 +1,4 @@
-import { ResultError } from 'src/presentation/error/result.error';
+import { ResultError } from '../../error/result.error';
 
 export type CustomerAddressListDtoResponseItemType = {
   id: string;

@@ -39,7 +39,7 @@ export class ProductCategoriesController {
   @ApiResponse({
     status: 201,
     type: CreateProductCategoryDto.Response,
-    isArray: false,
+    isArray: true,
     description: 'Product Category succesfully created'
   })
   @ApiResponse({
@@ -50,8 +50,6 @@ export class ProductCategoriesController {
   })
   @ApiBearerAuth()
   @Get()
-  @Roles(Role.ADMIN)
-  @UseGuards(JwtAuthGuard, RolesGuard)
   async findAll(): Promise<ProductCategoryListDto.Response> {
     const modelResponse = await this.productCategoriesService.findAll();
     return modelResponse;
@@ -71,8 +69,6 @@ export class ProductCategoriesController {
   })
   @ApiBearerAuth()
   @Get(':id')
-  @Roles(Role.ADMIN)
-  @UseGuards(JwtAuthGuard, RolesGuard)
   async findOne(
     @Param() params: any
   ): Promise<FindProductCategoryDto.Response> {

@@ -9,18 +9,18 @@ import {
   Put
 } from '@nestjs/common';
 import { ApiBearerAuth, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { JwtAuthGuard } from 'src/presentation/auth/guards/jwt.guard';
-import { RolesGuard } from 'src/presentation/auth/guards/roles.guard';
-import { ResultErrorDto } from 'src/presentation/error/error.dto';
+import { JwtAuthGuard } from '../../auth/guards/jwt.guard';
+import { RolesGuard } from '../../auth/guards/roles.guard';
+import { ResultErrorDto } from '../../error/error.dto';
 import { CreateUserDto } from '../users/create-user.dto';
 import { CreateProductDto } from './create-product.dto';
 import { DeleteProductDto } from './delete-product.dto';
 import { UpdateProductDto } from './update-product.dto';
 import { ProductListDto } from './list-product.dto';
-import { Roles } from 'src/presentation/auth/roles/role.decorator';
-import { Role } from 'src/presentation/auth/roles/role.enum';
+import { Roles } from '../../auth/roles/role.decorator';
+import { Role } from '../../auth/roles/role.enum';
 import { FindProductDto } from './find-product.dto';
-import { ProductsService } from 'src/core/products/services/products.service';
+import { ProductsService } from '../../../core/products/services/products.service';
 import { CreateProductAdapter } from './adapters/create-product.adapter';
 import { UpdateProductAdapter } from './adapters/update-product.adapter';
 import { DeleteProductAdapter } from './adapters/delete-product.adapter';
@@ -42,7 +42,7 @@ export class ProductsController {
   @ApiResponse({
     status: 201,
     type: CreateProductDto.Response,
-    isArray: false,
+    isArray: true,
     description: 'Product succesfully created'
   })
   @ApiResponse({
@@ -53,8 +53,6 @@ export class ProductsController {
   })
   @ApiBearerAuth()
   @Get()
-  @Roles(Role.ADMIN)
-  @UseGuards(JwtAuthGuard, RolesGuard)
   async findAll(): Promise<ProductListDto.Response> {
     const modelResponse = await this.productsService.findAll();
     const dtoResponse =
@@ -76,8 +74,6 @@ export class ProductsController {
   })
   @ApiBearerAuth()
   @Get(':id')
-  @Roles(Role.ADMIN)
-  @UseGuards(JwtAuthGuard, RolesGuard)
   async findOne(@Param() params: any): Promise<FindProductDto.Response> {
     const { id } = params;
     const modelResponse = await this.productsService.findOne(id);

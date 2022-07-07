@@ -1,0 +1,3013 @@
+{
+	"info": {
+		"_postman_id": "c1b9786e-872f-4f35-8cb5-68d62719f687",
+		"name": "00loja",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "getUsers [admin]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvbmVjb0Bob3RtYWlsLmNvbSIsImZpcnN0X25hbWUiOiJKb25hcyIsImxhc3RfbmFtZSI6IlVzZXIiLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVEFGRiJdLCJpYXQiOjE2NTcxMTEyMDcsImV4cCI6MTY1NzExNDgwN30.9iZ7flAL_x9N_ZXfrj8UhXeLvxdywPnt4X-_ry2kLMY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/users/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getUsers [admin]",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/users/",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1977"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7b9-mI2wuWrSnxsc7pgaFGIZcNMR8Eo\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Jul 2022 03:15:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"057e0255-e3fa-4a6f-8101-510c8e6b060b\",\n        \"email\": \"joneco@hotmail.com\",\n        \"first_name\": \"Jonas\",\n        \"last_name\": \"User\",\n        \"roles\": [\n            \"USER\",\n            \"ADMIN\",\n            \"STAFF\"\n        ],\n        \"created_at\": \"2022-07-02T19:27:47.140Z\",\n        \"updated_at\": \"2022-07-02T19:27:47.140Z\",\n        \"deleted_at\": null\n    },\n    {\n        \"id\": \"16ff79a6-9366-4f39-8ad5-ae37989f439f\",\n        \"email\": \"jonecodeletado@hotmail.com\",\n        \"first_name\": \"Jonas\",\n        \"last_name\": \"Deletado\",\n        \"roles\": [\n            \"USER\",\n            \"ADMIN\",\n            \"STAFF\"\n        ],\n        \"created_at\": \"2022-07-02T19:27:47.140Z\",\n        \"updated_at\": \"2022-07-02T19:28:49.595Z\",\n        \"deleted_at\": \"2022-07-02T22:28:49.000Z\"\n    },\n    {\n        \"id\": \"48771d98-43b3-408e-b34f-47822b3a0d48\",\n        \"email\": \"jonecouser@hotmail.com\",\n        \"first_name\": \"Jonas\",\n        \"last_name\": \"Admin\",\n        \"roles\": [\n            \"USER\"\n        ],\n        \"created_at\": \"2022-07-02T19:27:47.140Z\",\n        \"updated_at\": \"2022-07-04T15:42:28.945Z\",\n        \"deleted_at\": \"2022-07-04T15:42:17.040Z\"\n    },\n    {\n        \"id\": \"c17cd88c-13e8-4d86-9ba3-99e8135707cd\",\n        \"email\": \"joneco2@hotmail.com\",\n        \"first_name\": \"jonas\",\n        \"last_name\": \"joneco\",\n        \"roles\": [],\n        \"created_at\": \"2022-07-04T16:44:55.179Z\",\n        \"updated_at\": \"2022-07-04T16:44:55.180Z\",\n        \"deleted_at\": null\n    },\n    {\n        \"id\": \"55ffdaf5-dc6e-4184-b1cd-e9bbc683ee54\",\n        \"email\": \"joneco1@hotmail.com\",\n        \"first_name\": \"jonas\",\n        \"last_name\": \"joneco\",\n        \"roles\": [\n            \"USER\"\n        ],\n        \"created_at\": \"2022-07-04T16:50:55.943Z\",\n        \"updated_at\": \"2022-07-04T16:50:55.944Z\",\n        \"deleted_at\": null\n    },\n    {\n        \"id\": \"94f1e63c-7521-46bc-970b-68cdb2ebc3ab\",\n        \"email\": \"joneco10@hotmail.com\",\n        \"first_name\": \"jonas\",\n        \"last_name\": \"joneco\",\n        \"roles\": [\n            \"USER\"\n        ],\n        \"created_at\": \"2022-07-04T16:56:09.049Z\",\n        \"updated_at\": \"2022-07-04T16:56:38.720Z\",\n        \"deleted_at\": \"2022-07-04T16:56:38.704Z\"\n    },\n    {\n        \"id\": \"650a8753-ecee-4394-b2bc-e1f283653199\",\n        \"email\": \"jonecobc14@hotmail.com\",\n        \"first_name\": \"jonecoteste\",\n        \"last_name\": \"joneco\",\n        \"roles\": [\n            \"USER\"\n        ],\n        \"created_at\": \"2022-07-04T16:49:20.939Z\",\n        \"updated_at\": \"2022-07-04T17:17:05.386Z\",\n        \"deleted_at\": null\n    },\n    {\n        \"id\": \"aacc492b-683f-4a15-b967-efc1698079d1\",\n        \"email\": \"joneco100@hotmail.com\",\n        \"first_name\": \"jonas\",\n        \"last_name\": \"joneco\",\n        \"roles\": [\n            \"USER\"\n        ],\n        \"created_at\": \"2022-07-04T18:53:16.464Z\",\n        \"updated_at\": \"2022-07-04T18:55:39.170Z\",\n        \"deleted_at\": null\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "create User [None]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"ezer@professer.com\",\r\n    \"password\":\"profezer\",\r\n    \"first_name\":\"ezer\",\r\n    \"last_name\":\"ifnet\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/users/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "email registered",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"joneco1002@hotmail.com\",\r\n    \"password\":\"cdesffasfsa\",\r\n    \"first_name\":\"jonas\",\r\n    \"last_name\":\"joneco\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/users/",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "55"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"37-HEJTgTVriXio/PNm9Mzi5xf0Tak\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Jul 2022 03:17:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"message\": \"Email already registered\"\n}"
+						},
+						{
+							"name": "create User [User/Admin]",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"joneco1001331@hotmail.com\",\r\n    \"password\":\"cdesffasfsa\",\r\n    \"first_name\":\"jonas\",\r\n    \"last_name\":\"joneco\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/users/",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "238"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ee-auSO5a8cnFgkdSDVYdBUCsxhtmI\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Jul 2022 03:17:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"cdc04ca1-732e-4387-843f-c7e59e5ffdb0\",\n    \"email\": \"joneco1001331@hotmail.com\",\n    \"first_name\": \"jonas\",\n    \"last_name\": \"joneco\",\n    \"roles\": [\n        \"USER\"\n    ],\n    \"created_at\": \"2022-07-06T03:17:37.895Z\",\n    \"updated_at\": \"2022-07-06T03:17:37.896Z\",\n    \"deleted_at\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "update User [Admin]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvbmVjb0Bob3RtYWlsLmNvbSIsImZpcnN0X25hbWUiOiJKb25hcyIsImxhc3RfbmFtZSI6IlVzZXIiLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVEFGRiJdLCJpYXQiOjE2NTcxMTEyMDcsImV4cCI6MTY1NzExNDgwN30.9iZ7flAL_x9N_ZXfrj8UhXeLvxdywPnt4X-_ry2kLMY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"ezer@ezerprofessor.com\",\r\n    \"first_name\": \"Ezer\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/users/9fe6a295-12a7-4dcf-8535-03417f584246",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"9fe6a295-12a7-4dcf-8535-03417f584246"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update User [Admin]",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"jonecobc14@hotmail.com\",\r\n    \"first_name\": \"jonecoteste\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/users/650a8753-ecee-4394-b2bc-e1f283653199",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"650a8753-ecee-4394-b2bc-e1f283653199"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "241"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f1-4lGquXCEGrUxgSSpgdgpz7ukl70\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Jul 2022 03:18:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"650a8753-ecee-4394-b2bc-e1f283653199\",\n    \"email\": \"jonecobc14@hotmail.com\",\n    \"first_name\": \"jonecoteste\",\n    \"last_name\": \"joneco\",\n    \"roles\": [\n        \"USER\"\n    ],\n    \"created_at\": \"2022-07-04T16:49:20.939Z\",\n    \"updated_at\": \"2022-07-06T03:18:28.145Z\",\n    \"deleted_at\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "delete User [Admin]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvbmVjb0Bob3RtYWlsLmNvbSIsImZpcnN0X25hbWUiOiJKb25hcyIsImxhc3RfbmFtZSI6IlVzZXIiLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVEFGRiJdLCJpYXQiOjE2NTcwNzczMDIsImV4cCI6MTY1NzA4MDkwMn0.K31pdv4YtYDQeCC5-jbSszEzh58ZHOpOQupt7z4M5Qs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/users/aacc492b-683f-4a15-b967-efc1698079d1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"aacc492b-683f-4a15-b967-efc1698079d1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete User",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/users/aacc492b-683f-4a15-b967-efc1698079d1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"aacc492b-683f-4a15-b967-efc1698079d1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "256"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"100-B8eq+2wtL6pKLEHY24bIhuuqD9s\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Jul 2022 03:19:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"aacc492b-683f-4a15-b967-efc1698079d1\",\n    \"email\": \"joneco100@hotmail.com\",\n    \"first_name\": \"jonas\",\n    \"last_name\": \"joneco\",\n    \"roles\": [\n        \"USER\"\n    ],\n    \"created_at\": \"2022-07-04T18:53:16.464Z\",\n    \"updated_at\": \"2022-07-06T03:19:29.831Z\",\n    \"deleted_at\": \"2022-07-06T03:19:29.795Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "find User [admin]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvbmVjb0Bob3RtYWlsLmNvbSIsImZpcnN0X25hbWUiOiJKb25hcyIsImxhc3RfbmFtZSI6IlVzZXIiLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVEFGRiJdLCJpYXQiOjE2NTcxMTEyMDcsImV4cCI6MTY1NzExNDgwN30.9iZ7flAL_x9N_ZXfrj8UhXeLvxdywPnt4X-_ry2kLMY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/users/9fe6a295-12a7-4dcf-8535-03417f584246",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"9fe6a295-12a7-4dcf-8535-03417f584246"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "find User",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"abc\",\r\n    \"teste\":\"cde\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/users/aacc492b-683f-4a15-b967-efc1698079d1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"aacc492b-683f-4a15-b967-efc1698079d1"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "40"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"28-oR73Vb/YPfDbgDgtA//MdHJasVY\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Jul 2022 03:19:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 404,\n    \"message\": \"Not Found\"\n}"
+						},
+						{
+							"name": "find User",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"abc\",\r\n    \"teste\":\"cde\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/users/cdc04ca1-732e-4387-843f-c7e59e5ffdb0",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"cdc04ca1-732e-4387-843f-c7e59e5ffdb0"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "238"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ee-auSO5a8cnFgkdSDVYdBUCsxhtmI\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Jul 2022 03:20:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"cdc04ca1-732e-4387-843f-c7e59e5ffdb0\",\n    \"email\": \"joneco1001331@hotmail.com\",\n    \"first_name\": \"jonas\",\n    \"last_name\": \"joneco\",\n    \"roles\": [\n        \"USER\"\n    ],\n    \"created_at\": \"2022-07-06T03:17:37.895Z\",\n    \"updated_at\": \"2022-07-06T03:17:37.896Z\",\n    \"deleted_at\": null\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "product categories",
+			"item": [
+				{
+					"name": "get Product Categories[none]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvbmVjb0Bob3RtYWlsLmNvbSIsImZpcnN0X25hbWUiOiJKb25hcyIsImxhc3RfbmFtZSI6IlVzZXIiLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVEFGRiJdLCJpYXQiOjE2NTcxMTEyMDcsImV4cCI6MTY1NzExNDgwN30.9iZ7flAL_x9N_ZXfrj8UhXeLvxdywPnt4X-_ry2kLMY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/product_categories",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product_categories"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get Product Categories",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/product_categories",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"product_categories"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "484"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1e4-9UDirTc+uDTZ7CjS5zd9kbTkRlk\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Jul 2022 13:18:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"00c007e5-b4c1-45c5-9674-d0f7bd8bdb4d\",\n        \"name\": \"smart watches\",\n        \"description\": \"relogios inteligentes\",\n        \"slug\": \"smart-watches\",\n        \"main_category\": null,\n        \"created_at\": \"2022-07-04T23:34:07.493Z\",\n        \"updated_at\": \"2022-07-04T23:34:07.494Z\",\n        \"deleted_at\": null\n    },\n    {\n        \"id\": \"959e682a-48a4-438b-af1e-bd36d11d1a11\",\n        \"name\": \"Liquidificadores\",\n        \"description\": \"cdesffasfsa\",\n        \"slug\": \"jonas\",\n        \"main_category\": null,\n        \"created_at\": \"2022-07-04T23:18:00.194Z\",\n        \"updated_at\": \"2022-07-05T00:06:57.097Z\",\n        \"deleted_at\": null\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "create Product Category [admin]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvbmVjb0Bob3RtYWlsLmNvbSIsImZpcnN0X25hbWUiOiJKb25hcyIsImxhc3RfbmFtZSI6IlVzZXIiLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVEFGRiJdLCJpYXQiOjE2NTY5NzUzMzIsImV4cCI6MTY1Njk3ODkzMn0.LM4LHUV_QS7JBPIOZL8QgFTI5i3zgpjAoEyO6zBjfCs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"smart watches2\",\r\n    \"description\":\"relogios inteligentes2\",\r\n    \"slug\":\"smart-watches2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/product_categories/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product_categories",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create Product Category [admin]",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"smart watches2\",\r\n    \"description\":\"relogios inteligentes2\",\r\n    \"slug\":\"smart-watches2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/product_categories/",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"product_categories",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "251"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"fb-tZf6eGXlXEi3vdJF74x+moZnXHU\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Jul 2022 13:20:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"8237189a-6939-44b4-a150-99607d0735c5\",\n    \"name\": \"smart watches2\",\n    \"description\": \"relogios inteligentes2\",\n    \"slug\": \"smart-watches2\",\n    \"main_category\": null,\n    \"created_at\": \"2022-07-06T13:20:18.542Z\",\n    \"updated_at\": \"2022-07-06T13:20:18.543Z\",\n    \"deleted_at\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "find Product Category[none]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/product_categories/00c007e5-b4c1-45c5-9674-d0f7bd8bdb4d",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product_categories",
+								"00c007e5-b4c1-45c5-9674-d0f7bd8bdb4d"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "find Product Category",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/product_categories/00c007e5-b4c1-45c5-9674-d0f7bd8bdb4d",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"product_categories",
+										"00c007e5-b4c1-45c5-9674-d0f7bd8bdb4d"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "248"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f8-Ma0NK68EcF6v+W8Sz+V4ykySd2g\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Jul 2022 13:18:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"00c007e5-b4c1-45c5-9674-d0f7bd8bdb4d\",\n    \"name\": \"smart watches\",\n    \"description\": \"relogios inteligentes\",\n    \"slug\": \"smart-watches\",\n    \"main_category\": null,\n    \"created_at\": \"2022-07-04T23:34:07.493Z\",\n    \"updated_at\": \"2022-07-04T23:34:07.494Z\",\n    \"deleted_at\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "update Product Category[admin]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvbmVjb0Bob3RtYWlsLmNvbSIsImZpcnN0X25hbWUiOiJKb25hcyIsImxhc3RfbmFtZSI6IlVzZXIiLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVEFGRiJdLCJpYXQiOjE2NTcxMTEyMDcsImV4cCI6MTY1NzExNDgwN30.9iZ7flAL_x9N_ZXfrj8UhXeLvxdywPnt4X-_ry2kLMY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Liquidificadores\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/product_categories/00c007e5-b4c1-45c5-9674-d0f7bd8bdb4d",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product_categories",
+								"00c007e5-b4c1-45c5-9674-d0f7bd8bdb4d"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update Product Category[admin]",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Liquidificadores\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/product_categories/00c007e5-b4c1-45c5-9674-d0f7bd8bdb4d",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"product_categories",
+										"00c007e5-b4c1-45c5-9674-d0f7bd8bdb4d"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "251"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"fb-RfRm1axW8g3LIsafSWmxCIxqMrU\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Jul 2022 13:21:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"00c007e5-b4c1-45c5-9674-d0f7bd8bdb4d\",\n    \"name\": \"Liquidificadores\",\n    \"description\": \"relogios inteligentes\",\n    \"slug\": \"smart-watches\",\n    \"main_category\": null,\n    \"created_at\": \"2022-07-04T23:34:07.493Z\",\n    \"updated_at\": \"2022-07-06T13:21:49.015Z\",\n    \"deleted_at\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "delete Product Category[admin]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvbmVjb0Bob3RtYWlsLmNvbSIsImZpcnN0X25hbWUiOiJKb25hcyIsImxhc3RfbmFtZSI6IlVzZXIiLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVEFGRiJdLCJpYXQiOjE2NTcxMTEyMDcsImV4cCI6MTY1NzExNDgwN30.9iZ7flAL_x9N_ZXfrj8UhXeLvxdywPnt4X-_ry2kLMY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/product_categories/959e682a-48a4-438b-af1e-bd36d11d1a11",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product_categories",
+								"959e682a-48a4-438b-af1e-bd36d11d1a11"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete Product Category[admin]",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/product_categories/959e682a-48a4-438b-af1e-bd36d11d1a11",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"product_categories",
+										"959e682a-48a4-438b-af1e-bd36d11d1a11"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "255"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ff-plFhcQBg+OuCLRbp6y0chDuQspc\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Jul 2022 13:23:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"959e682a-48a4-438b-af1e-bd36d11d1a11\",\n    \"name\": \"Liquidificadores\",\n    \"description\": \"cdesffasfsa\",\n    \"slug\": \"jonas\",\n    \"main_category\": null,\n    \"created_at\": \"2022-07-04T23:18:00.194Z\",\n    \"updated_at\": \"2022-07-06T13:23:12.162Z\",\n    \"deleted_at\": \"2022-07-06T13:23:12.139Z\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "get Products [none]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/products",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get Products",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/products",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"products"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "4092"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ffc-OVuQqo7w4jHmAWJGPhGSx48VaBg\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Jul 2022 13:25:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"a14f3b68-33ed-4866-8b16-c8d31bcb9d02\",\n        \"name\": \"Apple Watch2\",\n        \"description\": \"Smart Watch\",\n        \"slug\": \"apple-a2\",\n        \"sku\": \"app1\",\n        \"price\": 200,\n        \"weight_unit\": \"G\",\n        \"weight\": 200,\n        \"length_unit\": \"MM\",\n        \"lengt\": 20,\n        \"width\": 20,\n        \"height\": 20,\n        \"minimum_amount\": 1,\n        \"created_at\": \"2022-07-05T02:56:47.972Z\",\n        \"updated_at\": \"2022-07-05T02:56:47.973Z\",\n        \"deleted_at\": null\n    },\n    {\n        \"id\": \"b0ef0995-2b35-4a18-96ef-67228628bd0b\",\n        \"name\": \"Apple Watche\",\n        \"description\": \"Smart Watch\",\n        \"slug\": \"apple-aaaaa\",\n        \"sku\": \"app1\",\n        \"price\": 200,\n        \"weight_unit\": \"G\",\n        \"weight\": 200,\n        \"length_unit\": \"MM\",\n        \"lengt\": 20,\n        \"width\": 20,\n        \"height\": 20,\n        \"minimum_amount\": 1,\n        \"created_at\": \"2022-07-05T03:03:52.553Z\",\n        \"updated_at\": \"2022-07-05T03:03:52.555Z\",\n        \"deleted_at\": null\n    },\n    {\n        \"id\": \"1c852d34-00d5-407e-96e0-3a7bac011077\",\n        \"name\": \"teste\",\n        \"description\": \"Smart Watch\",\n        \"slug\": \"teste-1\",\n        \"sku\": \"app3341\",\n        \"price\": 200,\n        \"weight_unit\": \"G\",\n        \"weight\": 200,\n        \"length_unit\": \"MM\",\n        \"lengt\": 20,\n        \"width\": 20,\n        \"height\": 20,\n        \"minimum_amount\": 1,\n        \"created_at\": \"2022-07-05T03:10:14.838Z\",\n        \"updated_at\": \"2022-07-05T03:10:14.839Z\",\n        \"deleted_at\": null\n    },\n    {\n        \"id\": \"00ff706e-8ca3-4303-b324-706a1642447c\",\n        \"name\": \"teste\",\n        \"description\": \"Smart Watch\",\n        \"slug\": \"teste-2\",\n        \"sku\": \"app3341\",\n        \"price\": 200,\n        \"weight_unit\": \"G\",\n        \"weight\": 200,\n        \"length_unit\": \"MM\",\n        \"lengt\": 20,\n        \"width\": 20,\n        \"height\": 20,\n        \"minimum_amount\": 1,\n        \"created_at\": \"2022-07-05T03:11:52.748Z\",\n        \"updated_at\": \"2022-07-05T03:11:52.750Z\",\n        \"deleted_at\": null\n    },\n    {\n        \"id\": \"35d818a2-a7e1-40a3-92a3-59a3dbff8a06\",\n        \"name\": \"teste Add\",\n        \"description\": \"Smart Watch2\",\n        \"slug\": \"teste-23\",\n        \"sku\": \"app3341\",\n        \"price\": 200,\n        \"weight_unit\": \"G\",\n        \"weight\": 200,\n        \"length_unit\": \"MM\",\n        \"lengt\": 20,\n        \"width\": 20,\n        \"height\": 20,\n        \"minimum_amount\": 1,\n        \"created_at\": \"2022-07-05T03:20:37.591Z\",\n        \"updated_at\": \"2022-07-05T03:20:37.593Z\",\n        \"deleted_at\": null\n    },\n    {\n        \"id\": \"71c6d51e-b91a-4fad-82f3-9d09381281cd\",\n        \"name\": \"teste Add\",\n        \"description\": \"Smart Watch2\",\n        \"slug\": \"teste-234\",\n        \"sku\": \"app3341\",\n        \"price\": 200,\n        \"weight_unit\": \"G\",\n        \"weight\": 200,\n        \"length_unit\": \"MM\",\n        \"lengt\": 20,\n        \"width\": 20,\n        \"height\": 20,\n        \"minimum_amount\": 1,\n        \"created_at\": \"2022-07-05T03:24:44.236Z\",\n        \"updated_at\": \"2022-07-05T03:24:44.237Z\",\n        \"deleted_at\": null\n    },\n    {\n        \"id\": \"b5dd9e48-b2e8-4d0f-b84d-57859bf4a1a0\",\n        \"name\": \"teste Add\",\n        \"description\": \"Smart Watch2\",\n        \"slug\": \"teste-2345\",\n        \"sku\": \"app3341\",\n        \"price\": 200,\n        \"weight_unit\": \"G\",\n        \"weight\": 200,\n        \"length_unit\": \"MM\",\n        \"lengt\": 20,\n        \"width\": 20,\n        \"height\": 20,\n        \"minimum_amount\": 1,\n        \"created_at\": \"2022-07-05T03:28:37.745Z\",\n        \"updated_at\": \"2022-07-05T03:28:37.746Z\",\n        \"deleted_at\": null\n    },\n    {\n        \"id\": \"e0b896e1-ee83-475b-8330-d369a4585650\",\n        \"name\": \"teste Add\",\n        \"description\": \"Smart Watch2\",\n        \"slug\": \"teste-234567\",\n        \"sku\": \"app3341\",\n        \"price\": 200,\n        \"weight_unit\": \"G\",\n        \"weight\": 200,\n        \"length_unit\": \"MM\",\n        \"lengt\": 20,\n        \"width\": 20,\n        \"height\": 20,\n        \"minimum_amount\": 1,\n        \"created_at\": \"2022-07-05T03:31:21.018Z\",\n        \"updated_at\": \"2022-07-05T03:31:21.019Z\",\n        \"deleted_at\": null\n    },\n    {\n        \"id\": \"0d22837e-4d95-4921-a447-c6b676b50acf\",\n        \"name\": \"teste Add\",\n        \"description\": \"Smart Watch2\",\n        \"slug\": \"teste-112\",\n        \"sku\": \"app3341\",\n        \"price\": 200,\n        \"weight_unit\": \"G\",\n        \"weight\": 200,\n        \"length_unit\": \"MM\",\n        \"lengt\": 20,\n        \"width\": 20,\n        \"height\": 20,\n        \"minimum_amount\": 1,\n        \"created_at\": \"2022-07-05T03:35:52.179Z\",\n        \"updated_at\": \"2022-07-05T03:35:52.182Z\",\n        \"deleted_at\": null\n    },\n    {\n        \"id\": \"b5519b10-4d0b-4a50-90a0-cd538cb4efb5\",\n        \"name\": \"teste Add\",\n        \"description\": \"Smart Watch2\",\n        \"slug\": \"teste-id\",\n        \"sku\": \"app3341\",\n        \"price\": 200,\n        \"weight_unit\": \"G\",\n        \"weight\": 200,\n        \"length_unit\": \"MM\",\n        \"lengt\": 20,\n        \"width\": 20,\n        \"height\": 20,\n        \"minimum_amount\": 1,\n        \"created_at\": \"2022-07-05T03:37:03.900Z\",\n        \"updated_at\": \"2022-07-05T03:37:03.901Z\",\n        \"deleted_at\": null\n    },\n    {\n        \"id\": \"c64b0640-9987-4712-be1e-1b6b55c5f3a6\",\n        \"name\": \"teste Add\",\n        \"description\": \"Smart Watch2\",\n        \"slug\": \"teste-id2\",\n        \"sku\": \"app3341\",\n        \"price\": 200,\n        \"weight_unit\": \"G\",\n        \"weight\": 200,\n        \"length_unit\": \"MM\",\n        \"lengt\": 20,\n        \"width\": 20,\n        \"height\": 20,\n        \"minimum_amount\": 1,\n        \"created_at\": \"2022-07-05T03:39:35.086Z\",\n        \"updated_at\": \"2022-07-05T03:39:35.088Z\",\n        \"deleted_at\": null\n    },\n    {\n        \"id\": \"a8b75d52-1685-4e15-a787-53937f2fcfc2\",\n        \"name\": \"Apple Watch\",\n        \"description\": \"Smart Watch\",\n        \"slug\": \"apple-watch\",\n        \"sku\": \"app1\",\n        \"price\": 200,\n        \"weight_unit\": \"G\",\n        \"weight\": 200,\n        \"length_unit\": \"MM\",\n        \"lengt\": 20,\n        \"width\": 20,\n        \"height\": 20,\n        \"minimum_amount\": 1,\n        \"created_at\": \"2022-07-05T01:41:20.819Z\",\n        \"updated_at\": \"2022-07-05T12:41:27.367Z\",\n        \"deleted_at\": null\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "create Product[admin]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvbmVjb0Bob3RtYWlsLmNvbSIsImZpcnN0X25hbWUiOiJKb25hcyIsImxhc3RfbmFtZSI6IlVzZXIiLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVEFGRiJdLCJpYXQiOjE2NTY5ODQ3NjgsImV4cCI6MTY1Njk4ODM2OH0.JsykBh11zcQ61saBSSBOmv9y-tCNtPAPVmD8R-k0-Xk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"teste Add\",\r\n    \"description\": \"Smart Watch4\",\r\n    \"slug\": \"watch3\",\r\n    \"sku\": \"app3341\",\r\n    \"product_categories\":[\r\n        {\"slug\":\"smart-watches\"},\r\n        {\"slug\":\"jonas\"}\r\n    ],\r\n    \"price\": 200,\r\n    \"weight_unit\": \"G\",\r\n    \"weight\": 200,\r\n    \"length_unit\": \"MM\",\r\n    \"length\": 20,\r\n    \"width\": 20,\r\n    \"height\": 20,\r\n    \"minimum_amount\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/products/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create Product",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"teste Add\",\r\n    \"description\": \"Smart Watch2\",\r\n    \"slug\": \"teste-id\",\r\n    \"sku\": \"app3341\",\r\n    \"product_categories\":[\r\n        {\"id\":\"00c007e5-b4c1-45c5-9674-d0f7bd8bdb4d\"},\r\n        {\"id\":\"959e682a-48a4-438b-af1e-bd36d11d1a11\"}\r\n    ],\r\n    \"price\": 200,\r\n    \"weight_unit\": \"G\",\r\n    \"weight\": 200,\r\n    \"length_unit\": \"MM\",\r\n    \"length\": 20,\r\n    \"width\": 20,\r\n    \"height\": 20,\r\n    \"minimum_amount\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/products/",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"products",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "341"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"155-h0VpaL9GkpOpvxWJAVs+Aks8Wwg\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 05 Jul 2022 03:37:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"b5519b10-4d0b-4a50-90a0-cd538cb4efb5\",\n    \"name\": \"teste Add\",\n    \"description\": \"Smart Watch2\",\n    \"slug\": \"teste-id\",\n    \"sku\": \"app3341\",\n    \"price\": 200,\n    \"weight_unit\": \"G\",\n    \"weight\": 200,\n    \"length_unit\": \"MM\",\n    \"length\": 20,\n    \"width\": 20,\n    \"height\": 20,\n    \"minimum_amount\": 1,\n    \"created_at\": \"2022-07-05T03:37:03.900Z\",\n    \"updated_at\": \"2022-07-05T03:37:03.901Z\",\n    \"deleted_at\": null\n}"
+						},
+						{
+							"name": "create Product",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"teste Add\",\r\n    \"description\": \"Smart Watch2\",\r\n    \"slug\": \"teste-112\",\r\n    \"sku\": \"app3341\",\r\n    \"product_categories\":[\r\n        {\"slug\":\"smart-watches\"},\r\n        {\"slug\":\"jonas\"}\r\n    ],\r\n    \"price\": 200,\r\n    \"weight_unit\": \"G\",\r\n    \"weight\": 200,\r\n    \"length_unit\": \"MM\",\r\n    \"length\": 20,\r\n    \"width\": 20,\r\n    \"height\": 20,\r\n    \"minimum_amount\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/products/",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"products",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "341"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"155-h0VpaL9GkpOpvxWJAVs+Aks8Wwg\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 05 Jul 2022 03:37:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"b5519b10-4d0b-4a50-90a0-cd538cb4efb5\",\n    \"name\": \"teste Add\",\n    \"description\": \"Smart Watch2\",\n    \"slug\": \"teste-id\",\n    \"sku\": \"app3341\",\n    \"price\": 200,\n    \"weight_unit\": \"G\",\n    \"weight\": 200,\n    \"length_unit\": \"MM\",\n    \"length\": 20,\n    \"width\": 20,\n    \"height\": 20,\n    \"minimum_amount\": 1,\n    \"created_at\": \"2022-07-05T03:37:03.900Z\",\n    \"updated_at\": \"2022-07-05T03:37:03.901Z\",\n    \"deleted_at\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "find Product [none]",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"abc\",\r\n    \"teste\":\"cde\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/products/a14f3b68-33ed-4866-8b16-c8d31bcb9d02",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"a14f3b68-33ed-4866-8b16-c8d31bcb9d02"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "find Product [none]",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"abc\",\r\n    \"teste\":\"cde\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/products/a14f3b68-33ed-4866-8b16-c8d31bcb9d02",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"products",
+										"a14f3b68-33ed-4866-8b16-c8d31bcb9d02"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "339"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"153-M0KsrSWLQJNay7k2AmnJbgS4+RY\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Jul 2022 13:26:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"a14f3b68-33ed-4866-8b16-c8d31bcb9d02\",\n    \"name\": \"Apple Watch2\",\n    \"description\": \"Smart Watch\",\n    \"slug\": \"apple-a2\",\n    \"sku\": \"app1\",\n    \"price\": 200,\n    \"weight_unit\": \"G\",\n    \"weight\": 200,\n    \"length_unit\": \"MM\",\n    \"lengt\": 20,\n    \"width\": 20,\n    \"height\": 20,\n    \"minimum_amount\": 1,\n    \"created_at\": \"2022-07-05T02:56:47.972Z\",\n    \"updated_at\": \"2022-07-05T02:56:47.973Z\",\n    \"deleted_at\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "update Product [admin]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvbmVjb0Bob3RtYWlsLmNvbSIsImZpcnN0X25hbWUiOiJKb25hcyIsImxhc3RfbmFtZSI6IlVzZXIiLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVEFGRiJdLCJpYXQiOjE2NTcxMTEyMDcsImV4cCI6MTY1NzExNDgwN30.9iZ7flAL_x9N_ZXfrj8UhXeLvxdywPnt4X-_ry2kLMY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Apple Watch\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/products/a8b75d52-1685-4e15-a787-53937f2fcfc2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"a8b75d52-1685-4e15-a787-53937f2fcfc2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update Product [admin]",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Apple Watch\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/products/a8b75d52-1685-4e15-a787-53937f2fcfc2",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"products",
+										"a8b75d52-1685-4e15-a787-53937f2fcfc2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "341"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"155-DKiytyYqI8KYbtpvF9cXOode2lo\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Jul 2022 13:28:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"a8b75d52-1685-4e15-a787-53937f2fcfc2\",\n    \"name\": \"Apple Watch\",\n    \"description\": \"Smart Watch\",\n    \"slug\": \"apple-watch\",\n    \"sku\": \"app1\",\n    \"price\": 200,\n    \"weight_unit\": \"G\",\n    \"weight\": 200,\n    \"length_unit\": \"MM\",\n    \"lengt\": 20,\n    \"width\": 20,\n    \"height\": 20,\n    \"minimum_amount\": 1,\n    \"created_at\": \"2022-07-05T01:41:20.819Z\",\n    \"updated_at\": \"2022-07-06T13:28:15.161Z\",\n    \"deleted_at\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "delete Product[admin]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvbmVjb0Bob3RtYWlsLmNvbSIsImZpcnN0X25hbWUiOiJKb25hcyIsImxhc3RfbmFtZSI6IlVzZXIiLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVEFGRiJdLCJpYXQiOjE2NTcxMTEyMDcsImV4cCI6MTY1NzExNDgwN30.9iZ7flAL_x9N_ZXfrj8UhXeLvxdywPnt4X-_ry2kLMY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/products/a8b75d52-1685-4e15-a787-53937f2fcfc2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"a8b75d52-1685-4e15-a787-53937f2fcfc2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete Product",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/products/a8b75d52-1685-4e15-a787-53937f2fcfc2",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"products",
+										"a8b75d52-1685-4e15-a787-53937f2fcfc2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "363"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"16b-LHGs2xvDWELUFiPLFi6UC3pSkrU\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Jul 2022 13:28:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"a8b75d52-1685-4e15-a787-53937f2fcfc2\",\n    \"name\": \"Apple Watch\",\n    \"description\": \"Smart Watch\",\n    \"slug\": \"apple-watch\",\n    \"sku\": \"app1\",\n    \"price\": 200,\n    \"weight_unit\": \"G\",\n    \"weight\": 200,\n    \"length_unit\": \"MM\",\n    \"lengt\": 20,\n    \"width\": 20,\n    \"height\": 20,\n    \"minimum_amount\": 1,\n    \"created_at\": \"2022-07-05T01:41:20.819Z\",\n    \"updated_at\": \"2022-07-06T13:28:43.288Z\",\n    \"deleted_at\": \"2022-07-06T13:28:43.263Z\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "customers",
+			"item": [
+				{
+					"name": "get Customers [admin]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvbmVjb0Bob3RtYWlsLmNvbSIsImZpcnN0X25hbWUiOiJKb25hcyIsImxhc3RfbmFtZSI6IlVzZXIiLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVEFGRiJdLCJpYXQiOjE2NTcxMTEyMDcsImV4cCI6MTY1NzExNDgwN30.9iZ7flAL_x9N_ZXfrj8UhXeLvxdywPnt4X-_ry2kLMY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/customers",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"customers"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get Customers [admin]",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/customers",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"customers"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "253"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"fd-REioA+9Z2TNuLY+uLYmHkDvuGsM\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Jul 2022 12:46:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"87c57402-80cc-45ab-9eea-a8a4919cad03\",\n        \"user_id\": \"057e0255-e3fa-4a6f-8101-510c8e6b060b\",\n        \"identification\": \"12312312312\",\n        \"identification_type\": \"CPF\",\n        \"created_at\": \"2022-07-05T05:32:04.349Z\",\n        \"updated_at\": \"2022-07-05T13:05:46.262Z\",\n        \"deleted_at\": null\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "create Customer [admin/user]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvbmVjb0Bob3RtYWlsLmNvbSIsImZpcnN0X25hbWUiOiJKb25hcyIsImxhc3RfbmFtZSI6IlVzZXIiLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVEFGRiJdLCJpYXQiOjE2NTcxMTEyMDcsImV4cCI6MTY1NzExNDgwN30.9iZ7flAL_x9N_ZXfrj8UhXeLvxdywPnt4X-_ry2kLMY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": \"e3d94e74-5e82-4780-9451-c87c2a9339b9\",\r\n    \"identification\": 12345678910,\r\n    \"identification_type\": \"CPF\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/customers/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"customers",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create Customer [admin/user]",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user_id\": \"e3d94e74-5e82-4780-9451-c87c2a9339b9\",\r\n    \"identification\": 12345678910,\r\n    \"identification_type\": \"CPF\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/customers/",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"customers",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "275"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"113-PyysGiUeRJ2HNJXP8iVtanSQu2o\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Jul 2022 12:51:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"86c60f62-b3d1-4403-8473-68b2c551c6a6\",\n    \"user_id\": \"e3d94e74-5e82-4780-9451-c87c2a9339b9\",\n    \"identification\": \"12345678910\",\n    \"identification_type\": \"CPF\",\n    \"created_at\": \"2022-07-06T12:51:14.019Z\",\n    \"updated_at\": \"2022-07-06T12:51:14.020Z\",\n    \"deleted_at\": null,\n    \"customer_addresses\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "find Customer [admin]",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvbmVjb0Bob3RtYWlsLmNvbSIsImZpcnN0X25hbWUiOiJKb25hcyIsImxhc3RfbmFtZSI6IlVzZXIiLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVEFGRiJdLCJpYXQiOjE2NTcxMTEyMDcsImV4cCI6MTY1NzExNDgwN30.9iZ7flAL_x9N_ZXfrj8UhXeLvxdywPnt4X-_ry2kLMY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"abc\",\r\n    \"teste\":\"cde\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/customers/86c60f62-b3d1-4403-8473-68b2c551c6a6",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"customers",
+								"86c60f62-b3d1-4403-8473-68b2c551c6a6"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "find Customer [admin]",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"abc\",\r\n    \"teste\":\"cde\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/customers/86c60f62-b3d1-4403-8473-68b2c551c6a6",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"customers",
+										"86c60f62-b3d1-4403-8473-68b2c551c6a6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "275"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"113-PyysGiUeRJ2HNJXP8iVtanSQu2o\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Jul 2022 12:52:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"86c60f62-b3d1-4403-8473-68b2c551c6a6\",\n    \"user_id\": \"e3d94e74-5e82-4780-9451-c87c2a9339b9\",\n    \"identification\": \"12345678910\",\n    \"identification_type\": \"CPF\",\n    \"created_at\": \"2022-07-06T12:51:14.019Z\",\n    \"updated_at\": \"2022-07-06T12:51:14.020Z\",\n    \"deleted_at\": null,\n    \"customer_addresses\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "update Customer [admin]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvbmVjb0Bob3RtYWlsLmNvbSIsImZpcnN0X25hbWUiOiJKb25hcyIsImxhc3RfbmFtZSI6IlVzZXIiLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVEFGRiJdLCJpYXQiOjE2NTcxMTEyMDcsImV4cCI6MTY1NzExNDgwN30.9iZ7flAL_x9N_ZXfrj8UhXeLvxdywPnt4X-_ry2kLMY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"deleted_at\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/customers/86c60f62-b3d1-4403-8473-68b2c551c6a6",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"customers",
+								"86c60f62-b3d1-4403-8473-68b2c551c6a6"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update Customer",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"identification\":\"12312312312\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/customers/87c57402-80cc-45ab-9eea-a8a4919cad03",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"customers",
+										"87c57402-80cc-45ab-9eea-a8a4919cad03"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "251"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"fb-yyoeYWXljRa5x7EOcDTAZipVcVk\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 05 Jul 2022 13:05:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"87c57402-80cc-45ab-9eea-a8a4919cad03\",\n    \"user_id\": \"057e0255-e3fa-4a6f-8101-510c8e6b060b\",\n    \"identification\": \"12312312312\",\n    \"identification_type\": \"CPF\",\n    \"created_at\": \"2022-07-05T05:32:04.349Z\",\n    \"updated_at\": \"2022-07-05T13:05:46.262Z\",\n    \"deleted_at\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "delete Customer [admin]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvbmVjb0Bob3RtYWlsLmNvbSIsImZpcnN0X25hbWUiOiJKb25hcyIsImxhc3RfbmFtZSI6IlVzZXIiLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVEFGRiJdLCJpYXQiOjE2NTcxMTEyMDcsImV4cCI6MTY1NzExNDgwN30.9iZ7flAL_x9N_ZXfrj8UhXeLvxdywPnt4X-_ry2kLMY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/customers/86c60f62-b3d1-4403-8473-68b2c551c6a6",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"customers",
+								"86c60f62-b3d1-4403-8473-68b2c551c6a6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "customer addresses",
+			"item": [
+				{
+					"name": "get Customer Addresses [admin]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvbmVjb0Bob3RtYWlsLmNvbSIsImZpcnN0X25hbWUiOiJKb25hcyIsImxhc3RfbmFtZSI6IlVzZXIiLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVEFGRiJdLCJpYXQiOjE2NTcxMTEyMDcsImV4cCI6MTY1NzExNDgwN30.9iZ7flAL_x9N_ZXfrj8UhXeLvxdywPnt4X-_ry2kLMY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/customer_addresses",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"customer_addresses"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get Customer Addresses",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/customer_addresses",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"customer_addresses"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "447"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1bf-ivZynJ81DC41Lz1A8OBgVKxAmuU\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 05 Jul 2022 14:34:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"d5622860-27d1-4d39-8faa-6d4360966adb\",\n        \"description\": \"Casa\",\n        \"first_name\": \"Jonas\",\n        \"last_name\": \"Nunes\",\n        \"company\": \"Infnet\",\n        \"street\": \"Rua Maxwell\",\n        \"number\": 20,\n        \"complement\": \"apto 201\",\n        \"neighboorhood\": \"Vila Isabel\",\n        \"city\": \"Rio de Janeiro\",\n        \"state\": \"RJ\",\n        \"country\": \"Brasil\",\n        \"postcode\": \"20510-080\",\n        \"customer_id\": \"87c57402-80cc-45ab-9eea-a8a4919cad03\",\n        \"created_at\": \"2022-07-05T14:32:51.355Z\",\n        \"updated_at\": \"2022-07-05T14:32:51.358Z\",\n        \"deleted_at\": null\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "create Customer Address [admin/user]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvbmVjb0Bob3RtYWlsLmNvbSIsImZpcnN0X25hbWUiOiJKb25hcyIsImxhc3RfbmFtZSI6IlVzZXIiLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVEFGRiJdLCJpYXQiOjE2NTcxMTEyMDcsImV4cCI6MTY1NzExNDgwN30.9iZ7flAL_x9N_ZXfrj8UhXeLvxdywPnt4X-_ry2kLMY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Casa\",\r\n    \"first_name\": \"Jonas\",\r\n    \"last_name\": \"Nunes\",\r\n    \"company\": \"Infnet\",\r\n    \"street\": \"Rua Maxwell\",\r\n    \"number\": 20,\r\n    \"complement\": \"apto 201\",\r\n    \"neighboorhood\": \"Vila Isabel\",\r\n    \"city\": \"Rio de Janeiro\",\r\n    \"state\": \"RJ\",\r\n    \"country\": \"Brasil\",\r\n    \"postcode\": \"20510-080\",\r\n    \"customer_id\": \"87c57402-80cc-45ab-9eea-a8a4919cad03\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/customer_addresses/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"customer_addresses",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create Customer Address",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\": \"Casa\",\r\n    \"first_name\": \"Jonas\",\r\n    \"last_name\": \"Nunes\",\r\n    \"company\": \"Infnet\",\r\n    \"street\": \"Rua Maxwell\",\r\n    \"number\": 20,\r\n    \"complement\": \"apto 201\",\r\n    \"neighboorhood\": \"Vila Isabel\",\r\n    \"city\": \"Rio de Janeiro\",\r\n    \"state\": \"RJ\",\r\n    \"country\": \"Brasil\",\r\n    \"postcode\": \"20510-080\",\r\n    \"customer_id\": \"87c57402-80cc-45ab-9eea-a8a4919cad03\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/customer_addresses/",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"customer_addresses",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "445"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1bd-LL8eZDFtvTYq1N6kVHQ/rs/2f8s\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 05 Jul 2022 14:32:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"d5622860-27d1-4d39-8faa-6d4360966adb\",\n    \"description\": \"Casa\",\n    \"first_name\": \"Jonas\",\n    \"last_name\": \"Nunes\",\n    \"company\": \"Infnet\",\n    \"street\": \"Rua Maxwell\",\n    \"number\": 20,\n    \"complement\": \"apto 201\",\n    \"neighboorhood\": \"Vila Isabel\",\n    \"city\": \"Rio de Janeiro\",\n    \"state\": \"RJ\",\n    \"country\": \"Brasil\",\n    \"postcode\": \"20510-080\",\n    \"customer_id\": \"87c57402-80cc-45ab-9eea-a8a4919cad03\",\n    \"created_at\": \"2022-07-05T14:32:51.355Z\",\n    \"updated_at\": \"2022-07-05T14:32:51.358Z\",\n    \"deleted_at\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "find Customer Address [admin]",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvbmVjb0Bob3RtYWlsLmNvbSIsImZpcnN0X25hbWUiOiJKb25hcyIsImxhc3RfbmFtZSI6IlVzZXIiLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVEFGRiJdLCJpYXQiOjE2NTcxMTEyMDcsImV4cCI6MTY1NzExNDgwN30.9iZ7flAL_x9N_ZXfrj8UhXeLvxdywPnt4X-_ry2kLMY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/customer_addresses/d5622860-27d1-4d39-8faa-6d4360966adb",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"customer_addresses",
+								"d5622860-27d1-4d39-8faa-6d4360966adb"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "find Customer Address",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/customer_addresses/d5622860-27d1-4d39-8faa-6d4360966adb",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"customer_addresses",
+										"d5622860-27d1-4d39-8faa-6d4360966adb"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "445"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1bd-LL8eZDFtvTYq1N6kVHQ/rs/2f8s\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 05 Jul 2022 14:34:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"d5622860-27d1-4d39-8faa-6d4360966adb\",\n    \"description\": \"Casa\",\n    \"first_name\": \"Jonas\",\n    \"last_name\": \"Nunes\",\n    \"company\": \"Infnet\",\n    \"street\": \"Rua Maxwell\",\n    \"number\": 20,\n    \"complement\": \"apto 201\",\n    \"neighboorhood\": \"Vila Isabel\",\n    \"city\": \"Rio de Janeiro\",\n    \"state\": \"RJ\",\n    \"country\": \"Brasil\",\n    \"postcode\": \"20510-080\",\n    \"customer_id\": \"87c57402-80cc-45ab-9eea-a8a4919cad03\",\n    \"created_at\": \"2022-07-05T14:32:51.355Z\",\n    \"updated_at\": \"2022-07-05T14:32:51.358Z\",\n    \"deleted_at\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "update Customer Address [admin]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvbmVjb0Bob3RtYWlsLmNvbSIsImZpcnN0X25hbWUiOiJKb25hcyIsImxhc3RfbmFtZSI6IlVzZXIiLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVEFGRiJdLCJpYXQiOjE2NTcxMTEyMDcsImV4cCI6MTY1NzExNDgwN30.9iZ7flAL_x9N_ZXfrj8UhXeLvxdywPnt4X-_ry2kLMY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/customer_addresses/d5622860-27d1-4d39-8faa-6d4360966adb",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"customer_addresses",
+								"d5622860-27d1-4d39-8faa-6d4360966adb"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update Customer Address",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"street\":\"rua um\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/customer_addresses/d5622860-27d1-4d39-8faa-6d4360966adb",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"customer_addresses",
+										"d5622860-27d1-4d39-8faa-6d4360966adb"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "440"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1b8-MIIC+U5ocfU5P7ijwPYf+Jm2+7k\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 05 Jul 2022 14:35:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"d5622860-27d1-4d39-8faa-6d4360966adb\",\n    \"description\": \"Casa\",\n    \"first_name\": \"Jonas\",\n    \"last_name\": \"Nunes\",\n    \"company\": \"Infnet\",\n    \"street\": \"rua um\",\n    \"number\": 20,\n    \"complement\": \"apto 201\",\n    \"neighboorhood\": \"Vila Isabel\",\n    \"city\": \"Rio de Janeiro\",\n    \"state\": \"RJ\",\n    \"country\": \"Brasil\",\n    \"postcode\": \"20510-080\",\n    \"customer_id\": \"87c57402-80cc-45ab-9eea-a8a4919cad03\",\n    \"created_at\": \"2022-07-05T14:32:51.355Z\",\n    \"updated_at\": \"2022-07-05T14:35:32.299Z\",\n    \"deleted_at\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "delete Customer Address[admin]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvbmVjb0Bob3RtYWlsLmNvbSIsImZpcnN0X25hbWUiOiJKb25hcyIsImxhc3RfbmFtZSI6IlVzZXIiLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVEFGRiJdLCJpYXQiOjE2NTcxMTEyMDcsImV4cCI6MTY1NzExNDgwN30.9iZ7flAL_x9N_ZXfrj8UhXeLvxdywPnt4X-_ry2kLMY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/customer_addresses/d5622860-27d1-4d39-8faa-6d4360966adb",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"customer_addresses",
+								"d5622860-27d1-4d39-8faa-6d4360966adb"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete Customer Address",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/customer_addresses/d5622860-27d1-4d39-8faa-6d4360966adb",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"customer_addresses",
+										"d5622860-27d1-4d39-8faa-6d4360966adb"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "462"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1ce-8NgJaYLgh83LZiHBJge9BSdCMTc\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Jul 2022 13:16:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"d5622860-27d1-4d39-8faa-6d4360966adb\",\n    \"description\": \"Casa\",\n    \"first_name\": \"Jonas\",\n    \"last_name\": \"Nunes\",\n    \"company\": \"Infnet\",\n    \"street\": \"rua um\",\n    \"number\": 20,\n    \"complement\": \"apto 201\",\n    \"neighboorhood\": \"Vila Isabel\",\n    \"city\": \"Rio de Janeiro\",\n    \"state\": \"RJ\",\n    \"country\": \"Brasil\",\n    \"postcode\": \"20510-080\",\n    \"customer_id\": \"87c57402-80cc-45ab-9eea-a8a4919cad03\",\n    \"created_at\": \"2022-07-05T14:32:51.355Z\",\n    \"updated_at\": \"2022-07-06T13:16:11.283Z\",\n    \"deleted_at\": \"2022-07-06T13:16:11.269Z\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "orders",
+			"item": [
+				{
+					"name": "get Orders [admin]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvbmVjb0Bob3RtYWlsLmNvbSIsImZpcnN0X25hbWUiOiJKb25hcyIsImxhc3RfbmFtZSI6IlVzZXIiLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVEFGRiJdLCJpYXQiOjE2NTcxMTQyMzgsImV4cCI6MTY1NzExNzgzOH0.iRrECtQtdAULV5DCZp6U8xvdfrrmkyvOVMvk3q6U5lg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/orders",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get Orders [admin]",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/orders",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"orders"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "9334"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2476-1SC90JuN9ZqrAz8K80z7iZo8f9w\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Jul 2022 13:30:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"aea462d8-d6e8-4243-ab9c-098b5201cffb\",\n        \"comment\": \"comentario\",\n        \"products\": [\n            {\n                \"id\": \"a14f3b68-33ed-4866-8b16-c8d31bcb9d02\",\n                \"name\": \"Apple Watch2\",\n                \"description\": \"Smart Watch\",\n                \"slug\": \"apple-a2\",\n                \"sku\": \"app1\",\n                \"price\": 200,\n                \"weight_unit\": \"G\",\n                \"weight\": 200,\n                \"length_unit\": \"MM\",\n                \"length\": 20,\n                \"width\": 20,\n                \"height\": 20,\n                \"minimum_amount\": 1,\n                \"created_at\": \"2022-07-05T02:56:47.972Z\",\n                \"updated_at\": \"2022-07-05T02:56:47.973Z\",\n                \"deleted_at\": null\n            }\n        ],\n        \"customer_id\": \"87c57402-80cc-45ab-9eea-a8a4919cad03\",\n        \"customer_address_id\": \"d5622860-27d1-4d39-8faa-6d4360966adb\",\n        \"customer\": {\n            \"id\": \"87c57402-80cc-45ab-9eea-a8a4919cad03\",\n            \"user_id\": \"057e0255-e3fa-4a6f-8101-510c8e6b060b\",\n            \"identification\": \"12312312312\",\n            \"identification_type\": \"CPF\",\n            \"created_at\": \"2022-07-05T05:32:04.349Z\",\n            \"updated_at\": \"2022-07-05T13:05:46.262Z\",\n            \"deleted_at\": null\n        },\n        \"customer_address\": {\n            \"id\": \"d5622860-27d1-4d39-8faa-6d4360966adb\",\n            \"description\": \"Casa\",\n            \"first_name\": \"Jonas\",\n            \"last_name\": \"Nunes\",\n            \"company\": \"Infnet\",\n            \"street\": \"rua um\",\n            \"number\": 20,\n            \"complement\": \"apto 201\",\n            \"neighboorhood\": \"Vila Isabel\",\n            \"city\": \"Rio de Janeiro\",\n            \"state\": \"RJ\",\n            \"country\": \"Brasil\",\n            \"postcode\": \"20510-080\",\n            \"customer_id\": \"87c57402-80cc-45ab-9eea-a8a4919cad03\",\n            \"created_at\": \"2022-07-05T14:32:51.355Z\",\n            \"updated_at\": \"2022-07-06T13:16:11.283Z\",\n            \"deleted_at\": \"2022-07-06T13:16:11.269Z\"\n        },\n        \"created_at\": \"2022-07-06T01:07:54.580Z\",\n        \"updated_at\": \"2022-07-06T01:07:54.584Z\",\n        \"deleted_at\": null\n    },\n    {\n        \"id\": \"10aa68b4-0254-4a0c-aa64-51e82442938a\",\n        \"comment\": \"comentario\",\n        \"products\": [\n            {\n                \"id\": \"a14f3b68-33ed-4866-8b16-c8d31bcb9d02\",\n                \"name\": \"Apple Watch2\",\n                \"description\": \"Smart Watch\",\n                \"slug\": \"apple-a2\",\n                \"sku\": \"app1\",\n                \"price\": 200,\n                \"weight_unit\": \"G\",\n                \"weight\": 200,\n                \"length_unit\": \"MM\",\n                \"length\": 20,\n                \"width\": 20,\n                \"height\": 20,\n                \"minimum_amount\": 1,\n                \"created_at\": \"2022-07-05T02:56:47.972Z\",\n                \"updated_at\": \"2022-07-05T02:56:47.973Z\",\n                \"deleted_at\": null\n            }\n        ],\n        \"customer_id\": \"87c57402-80cc-45ab-9eea-a8a4919cad03\",\n        \"customer_address_id\": \"d5622860-27d1-4d39-8faa-6d4360966adb\",\n        \"customer\": {\n            \"id\": \"87c57402-80cc-45ab-9eea-a8a4919cad03\",\n            \"user_id\": \"057e0255-e3fa-4a6f-8101-510c8e6b060b\",\n            \"identification\": \"12312312312\",\n            \"identification_type\": \"CPF\",\n            \"created_at\": \"2022-07-05T05:32:04.349Z\",\n            \"updated_at\": \"2022-07-05T13:05:46.262Z\",\n            \"deleted_at\": null\n        },\n        \"customer_address\": {\n            \"id\": \"d5622860-27d1-4d39-8faa-6d4360966adb\",\n            \"description\": \"Casa\",\n            \"first_name\": \"Jonas\",\n            \"last_name\": \"Nunes\",\n            \"company\": \"Infnet\",\n            \"street\": \"rua um\",\n            \"number\": 20,\n            \"complement\": \"apto 201\",\n            \"neighboorhood\": \"Vila Isabel\",\n            \"city\": \"Rio de Janeiro\",\n            \"state\": \"RJ\",\n            \"country\": \"Brasil\",\n            \"postcode\": \"20510-080\",\n            \"customer_id\": \"87c57402-80cc-45ab-9eea-a8a4919cad03\",\n            \"created_at\": \"2022-07-05T14:32:51.355Z\",\n            \"updated_at\": \"2022-07-06T13:16:11.283Z\",\n            \"deleted_at\": \"2022-07-06T13:16:11.269Z\"\n        },\n        \"created_at\": \"2022-07-06T01:09:12.253Z\",\n        \"updated_at\": \"2022-07-06T01:09:12.254Z\",\n        \"deleted_at\": null\n    },\n    {\n        \"id\": \"e2156271-546f-43dc-8b43-9e5f9fe0a982\",\n        \"comment\": \"comentario\",\n        \"products\": [\n            {\n                \"id\": \"a14f3b68-33ed-4866-8b16-c8d31bcb9d02\",\n                \"name\": \"Apple Watch2\",\n                \"description\": \"Smart Watch\",\n                \"slug\": \"apple-a2\",\n                \"sku\": \"app1\",\n                \"price\": 200,\n                \"weight_unit\": \"G\",\n                \"weight\": 200,\n                \"length_unit\": \"MM\",\n                \"length\": 20,\n                \"width\": 20,\n                \"height\": 20,\n                \"minimum_amount\": 1,\n                \"created_at\": \"2022-07-05T02:56:47.972Z\",\n                \"updated_at\": \"2022-07-05T02:56:47.973Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": \"71c6d51e-b91a-4fad-82f3-9d09381281cd\",\n                \"name\": \"teste Add\",\n                \"description\": \"Smart Watch2\",\n                \"slug\": \"teste-234\",\n                \"sku\": \"app3341\",\n                \"price\": 200,\n                \"weight_unit\": \"G\",\n                \"weight\": 200,\n                \"length_unit\": \"MM\",\n                \"length\": 20,\n                \"width\": 20,\n                \"height\": 20,\n                \"minimum_amount\": 1,\n                \"created_at\": \"2022-07-05T03:24:44.236Z\",\n                \"updated_at\": \"2022-07-05T03:24:44.237Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": \"c64b0640-9987-4712-be1e-1b6b55c5f3a6\",\n                \"name\": \"teste Add\",\n                \"description\": \"Smart Watch2\",\n                \"slug\": \"teste-id2\",\n                \"sku\": \"app3341\",\n                \"price\": 200,\n                \"weight_unit\": \"G\",\n                \"weight\": 200,\n                \"length_unit\": \"MM\",\n                \"length\": 20,\n                \"width\": 20,\n                \"height\": 20,\n                \"minimum_amount\": 1,\n                \"created_at\": \"2022-07-05T03:39:35.086Z\",\n                \"updated_at\": \"2022-07-05T03:39:35.088Z\",\n                \"deleted_at\": null\n            }\n        ],\n        \"customer_id\": \"87c57402-80cc-45ab-9eea-a8a4919cad03\",\n        \"customer_address_id\": \"d5622860-27d1-4d39-8faa-6d4360966adb\",\n        \"customer\": {\n            \"id\": \"87c57402-80cc-45ab-9eea-a8a4919cad03\",\n            \"user_id\": \"057e0255-e3fa-4a6f-8101-510c8e6b060b\",\n            \"identification\": \"12312312312\",\n            \"identification_type\": \"CPF\",\n            \"created_at\": \"2022-07-05T05:32:04.349Z\",\n            \"updated_at\": \"2022-07-05T13:05:46.262Z\",\n            \"deleted_at\": null\n        },\n        \"customer_address\": {\n            \"id\": \"d5622860-27d1-4d39-8faa-6d4360966adb\",\n            \"description\": \"Casa\",\n            \"first_name\": \"Jonas\",\n            \"last_name\": \"Nunes\",\n            \"company\": \"Infnet\",\n            \"street\": \"rua um\",\n            \"number\": 20,\n            \"complement\": \"apto 201\",\n            \"neighboorhood\": \"Vila Isabel\",\n            \"city\": \"Rio de Janeiro\",\n            \"state\": \"RJ\",\n            \"country\": \"Brasil\",\n            \"postcode\": \"20510-080\",\n            \"customer_id\": \"87c57402-80cc-45ab-9eea-a8a4919cad03\",\n            \"created_at\": \"2022-07-05T14:32:51.355Z\",\n            \"updated_at\": \"2022-07-06T13:16:11.283Z\",\n            \"deleted_at\": \"2022-07-06T13:16:11.269Z\"\n        },\n        \"created_at\": \"2022-07-06T01:13:07.421Z\",\n        \"updated_at\": \"2022-07-06T01:13:07.423Z\",\n        \"deleted_at\": null\n    },\n    {\n        \"id\": \"306567bd-da6c-4f68-9576-08692e71b24d\",\n        \"comment\": \"teste2\",\n        \"products\": [\n            {\n                \"id\": \"a14f3b68-33ed-4866-8b16-c8d31bcb9d02\",\n                \"name\": \"Apple Watch2\",\n                \"description\": \"Smart Watch\",\n                \"slug\": \"apple-a2\",\n                \"sku\": \"app1\",\n                \"price\": 200,\n                \"weight_unit\": \"G\",\n                \"weight\": 200,\n                \"length_unit\": \"MM\",\n                \"length\": 20,\n                \"width\": 20,\n                \"height\": 20,\n                \"minimum_amount\": 1,\n                \"created_at\": \"2022-07-05T02:56:47.972Z\",\n                \"updated_at\": \"2022-07-05T02:56:47.973Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": \"71c6d51e-b91a-4fad-82f3-9d09381281cd\",\n                \"name\": \"teste Add\",\n                \"description\": \"Smart Watch2\",\n                \"slug\": \"teste-234\",\n                \"sku\": \"app3341\",\n                \"price\": 200,\n                \"weight_unit\": \"G\",\n                \"weight\": 200,\n                \"length_unit\": \"MM\",\n                \"length\": 20,\n                \"width\": 20,\n                \"height\": 20,\n                \"minimum_amount\": 1,\n                \"created_at\": \"2022-07-05T03:24:44.236Z\",\n                \"updated_at\": \"2022-07-05T03:24:44.237Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": \"c64b0640-9987-4712-be1e-1b6b55c5f3a6\",\n                \"name\": \"teste Add\",\n                \"description\": \"Smart Watch2\",\n                \"slug\": \"teste-id2\",\n                \"sku\": \"app3341\",\n                \"price\": 200,\n                \"weight_unit\": \"G\",\n                \"weight\": 200,\n                \"length_unit\": \"MM\",\n                \"length\": 20,\n                \"width\": 20,\n                \"height\": 20,\n                \"minimum_amount\": 1,\n                \"created_at\": \"2022-07-05T03:39:35.086Z\",\n                \"updated_at\": \"2022-07-05T03:39:35.088Z\",\n                \"deleted_at\": null\n            }\n        ],\n        \"customer_id\": \"87c57402-80cc-45ab-9eea-a8a4919cad03\",\n        \"customer_address_id\": \"d5622860-27d1-4d39-8faa-6d4360966adb\",\n        \"customer\": {\n            \"id\": \"87c57402-80cc-45ab-9eea-a8a4919cad03\",\n            \"user_id\": \"057e0255-e3fa-4a6f-8101-510c8e6b060b\",\n            \"identification\": \"12312312312\",\n            \"identification_type\": \"CPF\",\n            \"created_at\": \"2022-07-05T05:32:04.349Z\",\n            \"updated_at\": \"2022-07-05T13:05:46.262Z\",\n            \"deleted_at\": null\n        },\n        \"customer_address\": {\n            \"id\": \"d5622860-27d1-4d39-8faa-6d4360966adb\",\n            \"description\": \"Casa\",\n            \"first_name\": \"Jonas\",\n            \"last_name\": \"Nunes\",\n            \"company\": \"Infnet\",\n            \"street\": \"rua um\",\n            \"number\": 20,\n            \"complement\": \"apto 201\",\n            \"neighboorhood\": \"Vila Isabel\",\n            \"city\": \"Rio de Janeiro\",\n            \"state\": \"RJ\",\n            \"country\": \"Brasil\",\n            \"postcode\": \"20510-080\",\n            \"customer_id\": \"87c57402-80cc-45ab-9eea-a8a4919cad03\",\n            \"created_at\": \"2022-07-05T14:32:51.355Z\",\n            \"updated_at\": \"2022-07-06T13:16:11.283Z\",\n            \"deleted_at\": \"2022-07-06T13:16:11.269Z\"\n        },\n        \"created_at\": \"2022-07-06T01:10:02.709Z\",\n        \"updated_at\": \"2022-07-06T02:44:55.755Z\",\n        \"deleted_at\": null\n    },\n    {\n        \"id\": \"86492e0b-1fd3-402c-b5cf-79b0603fc9b1\",\n        \"comment\": \"teste2\",\n        \"products\": [\n            {\n                \"id\": \"a14f3b68-33ed-4866-8b16-c8d31bcb9d02\",\n                \"name\": \"Apple Watch2\",\n                \"description\": \"Smart Watch\",\n                \"slug\": \"apple-a2\",\n                \"sku\": \"app1\",\n                \"price\": 200,\n                \"weight_unit\": \"G\",\n                \"weight\": 200,\n                \"length_unit\": \"MM\",\n                \"length\": 20,\n                \"width\": 20,\n                \"height\": 20,\n                \"minimum_amount\": 1,\n                \"created_at\": \"2022-07-05T02:56:47.972Z\",\n                \"updated_at\": \"2022-07-05T02:56:47.973Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": \"00ff706e-8ca3-4303-b324-706a1642447c\",\n                \"name\": \"teste\",\n                \"description\": \"Smart Watch\",\n                \"slug\": \"teste-2\",\n                \"sku\": \"app3341\",\n                \"price\": 200,\n                \"weight_unit\": \"G\",\n                \"weight\": 200,\n                \"length_unit\": \"MM\",\n                \"length\": 20,\n                \"width\": 20,\n                \"height\": 20,\n                \"minimum_amount\": 1,\n                \"created_at\": \"2022-07-05T03:11:52.748Z\",\n                \"updated_at\": \"2022-07-05T03:11:52.750Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": \"e0b896e1-ee83-475b-8330-d369a4585650\",\n                \"name\": \"teste Add\",\n                \"description\": \"Smart Watch2\",\n                \"slug\": \"teste-234567\",\n                \"sku\": \"app3341\",\n                \"price\": 200,\n                \"weight_unit\": \"G\",\n                \"weight\": 200,\n                \"length_unit\": \"MM\",\n                \"length\": 20,\n                \"width\": 20,\n                \"height\": 20,\n                \"minimum_amount\": 1,\n                \"created_at\": \"2022-07-05T03:31:21.018Z\",\n                \"updated_at\": \"2022-07-05T03:31:21.019Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": \"a8b75d52-1685-4e15-a787-53937f2fcfc2\",\n                \"name\": \"Apple Watch\",\n                \"description\": \"Smart Watch\",\n                \"slug\": \"apple-watch\",\n                \"sku\": \"app1\",\n                \"price\": 200,\n                \"weight_unit\": \"G\",\n                \"weight\": 200,\n                \"length_unit\": \"MM\",\n                \"length\": 20,\n                \"width\": 20,\n                \"height\": 20,\n                \"minimum_amount\": 1,\n                \"created_at\": \"2022-07-05T01:41:20.819Z\",\n                \"updated_at\": \"2022-07-06T13:28:43.288Z\",\n                \"deleted_at\": \"2022-07-06T13:28:43.263Z\"\n            }\n        ],\n        \"customer_id\": \"87c57402-80cc-45ab-9eea-a8a4919cad03\",\n        \"customer_address_id\": \"d5622860-27d1-4d39-8faa-6d4360966adb\",\n        \"customer\": {\n            \"id\": \"87c57402-80cc-45ab-9eea-a8a4919cad03\",\n            \"user_id\": \"057e0255-e3fa-4a6f-8101-510c8e6b060b\",\n            \"identification\": \"12312312312\",\n            \"identification_type\": \"CPF\",\n            \"created_at\": \"2022-07-05T05:32:04.349Z\",\n            \"updated_at\": \"2022-07-05T13:05:46.262Z\",\n            \"deleted_at\": null\n        },\n        \"customer_address\": {\n            \"id\": \"d5622860-27d1-4d39-8faa-6d4360966adb\",\n            \"description\": \"Casa\",\n            \"first_name\": \"Jonas\",\n            \"last_name\": \"Nunes\",\n            \"company\": \"Infnet\",\n            \"street\": \"rua um\",\n            \"number\": 20,\n            \"complement\": \"apto 201\",\n            \"neighboorhood\": \"Vila Isabel\",\n            \"city\": \"Rio de Janeiro\",\n            \"state\": \"RJ\",\n            \"country\": \"Brasil\",\n            \"postcode\": \"20510-080\",\n            \"customer_id\": \"87c57402-80cc-45ab-9eea-a8a4919cad03\",\n            \"created_at\": \"2022-07-05T14:32:51.355Z\",\n            \"updated_at\": \"2022-07-06T13:16:11.283Z\",\n            \"deleted_at\": \"2022-07-06T13:16:11.269Z\"\n        },\n        \"created_at\": \"2022-07-06T02:42:15.660Z\",\n        \"updated_at\": \"2022-07-06T03:11:14.757Z\",\n        \"deleted_at\": \"2022-07-06T03:11:14.747Z\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "create Order [admin/user]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvbmVjb0Bob3RtYWlsLmNvbSIsImZpcnN0X25hbWUiOiJKb25hcyIsImxhc3RfbmFtZSI6IlVzZXIiLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVEFGRiJdLCJpYXQiOjE2NTcxMTQyMzgsImV4cCI6MTY1NzExNzgzOH0.iRrECtQtdAULV5DCZp6U8xvdfrrmkyvOVMvk3q6U5lg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"comment\": \"comentario da order\",\r\n    \"customer_id\":\"87c57402-80cc-45ab-9eea-a8a4919cad03\",\r\n    \"customer_address_id\":\"d5622860-27d1-4d39-8faa-6d4360966adb\",\r\n    \"products\":[\r\n        {\"id\":\"a14f3b68-33ed-4866-8b16-c8d31bcb9d02\"},\r\n        {\"id\":\"71c6d51e-b91a-4fad-82f3-9d09381281cd\"},\r\n        {\"slug\":\"teste-id2\"}\r\n        ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/orders/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"orders",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create Order",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"comment\": \"comentario1\",\r\n    \"customer_id\":\"87c57402-80cc-45ab-9eea-a8a4919cad03\",\r\n    \"customer_address_id\":\"d5622860-27d1-4d39-8faa-6d4360966adb\",\r\n    \"products\":[\r\n        {\"id\":\"a14f3b68-33ed-4866-8b16-c8d31bcb9d02\"},\r\n        {\"id\":\"71c6d51e-b91a-4fad-82f3-9d09381281cd\"},\r\n        {\"slug\":\"teste-id2\"}\r\n        \r\n        ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/orders/",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"orders",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2044"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7fc-cVLK0OEcS4sQRFq6qXd9NDmdZ+4\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Jul 2022 02:42:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"86492e0b-1fd3-402c-b5cf-79b0603fc9b1\",\n    \"comment\": \"comentario1\",\n    \"customer_id\": \"87c57402-80cc-45ab-9eea-a8a4919cad03\",\n    \"customer_address_id\": \"d5622860-27d1-4d39-8faa-6d4360966adb\",\n    \"created_at\": \"2022-07-06T02:42:15.660Z\",\n    \"updated_at\": \"2022-07-06T02:42:15.662Z\",\n    \"deleted_at\": null,\n    \"products\": [\n        {\n            \"id\": \"a14f3b68-33ed-4866-8b16-c8d31bcb9d02\",\n            \"name\": \"Apple Watch2\",\n            \"description\": \"Smart Watch\",\n            \"slug\": \"apple-a2\",\n            \"sku\": \"app1\",\n            \"price\": 200,\n            \"weight_unit\": \"G\",\n            \"weight\": 200,\n            \"length_unit\": \"MM\",\n            \"length\": 20,\n            \"width\": 20,\n            \"height\": 20,\n            \"minimum_amount\": 1,\n            \"created_at\": \"2022-07-05T02:56:47.972Z\",\n            \"updated_at\": \"2022-07-05T02:56:47.973Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": \"71c6d51e-b91a-4fad-82f3-9d09381281cd\",\n            \"name\": \"teste Add\",\n            \"description\": \"Smart Watch2\",\n            \"slug\": \"teste-234\",\n            \"sku\": \"app3341\",\n            \"price\": 200,\n            \"weight_unit\": \"G\",\n            \"weight\": 200,\n            \"length_unit\": \"MM\",\n            \"length\": 20,\n            \"width\": 20,\n            \"height\": 20,\n            \"minimum_amount\": 1,\n            \"created_at\": \"2022-07-05T03:24:44.236Z\",\n            \"updated_at\": \"2022-07-05T03:24:44.237Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": \"c64b0640-9987-4712-be1e-1b6b55c5f3a6\",\n            \"name\": \"teste Add\",\n            \"description\": \"Smart Watch2\",\n            \"slug\": \"teste-id2\",\n            \"sku\": \"app3341\",\n            \"price\": 200,\n            \"weight_unit\": \"G\",\n            \"weight\": 200,\n            \"length_unit\": \"MM\",\n            \"length\": 20,\n            \"width\": 20,\n            \"height\": 20,\n            \"minimum_amount\": 1,\n            \"created_at\": \"2022-07-05T03:39:35.086Z\",\n            \"updated_at\": \"2022-07-05T03:39:35.088Z\",\n            \"deleted_at\": null\n        }\n    ],\n    \"customer_address\": {\n        \"id\": \"d5622860-27d1-4d39-8faa-6d4360966adb\",\n        \"description\": \"Casa\",\n        \"first_name\": \"Jonas\",\n        \"last_name\": \"Nunes\",\n        \"company\": \"Infnet\",\n        \"street\": \"rua um\",\n        \"number\": 20,\n        \"complement\": \"apto 201\",\n        \"neighboorhood\": \"Vila Isabel\",\n        \"city\": \"Rio de Janeiro\",\n        \"state\": \"RJ\",\n        \"country\": \"Brasil\",\n        \"postcode\": \"20510-080\",\n        \"customer_id\": \"87c57402-80cc-45ab-9eea-a8a4919cad03\",\n        \"created_at\": \"2022-07-05T14:32:51.355Z\",\n        \"updated_at\": \"2022-07-05T14:37:04.453Z\",\n        \"deleted_at\": null\n    },\n    \"customer\": {\n        \"id\": \"87c57402-80cc-45ab-9eea-a8a4919cad03\",\n        \"user_id\": \"057e0255-e3fa-4a6f-8101-510c8e6b060b\",\n        \"identification\": \"12312312312\",\n        \"identification_type\": \"CPF\",\n        \"created_at\": \"2022-07-05T05:32:04.349Z\",\n        \"updated_at\": \"2022-07-05T13:05:46.262Z\",\n        \"deleted_at\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "find order [admin]",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvbmVjb0Bob3RtYWlsLmNvbSIsImZpcnN0X25hbWUiOiJKb25hcyIsImxhc3RfbmFtZSI6IlVzZXIiLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVEFGRiJdLCJpYXQiOjE2NTcxMTQyMzgsImV4cCI6MTY1NzExNzgzOH0.iRrECtQtdAULV5DCZp6U8xvdfrrmkyvOVMvk3q6U5lg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/orders/bc59d7e7-4fad-4458-a57d-abe0908e2637",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"orders",
+								"bc59d7e7-4fad-4458-a57d-abe0908e2637"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "find order",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/orders/86492e0b-1fd3-402c-b5cf-79b0603fc9b1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"orders",
+										"86492e0b-1fd3-402c-b5cf-79b0603fc9b1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "292"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"124-AmQb2Lxn1Sb/TPkx608lSNLvaYc\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Jul 2022 03:10:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"86492e0b-1fd3-402c-b5cf-79b0603fc9b1\",\n    \"comment\": \"teste2\",\n    \"products\": null,\n    \"customer_id\": \"87c57402-80cc-45ab-9eea-a8a4919cad03\",\n    \"customer_address_id\": \"d5622860-27d1-4d39-8faa-6d4360966adb\",\n    \"created_at\": \"2022-07-06T02:42:15.660Z\",\n    \"updated_at\": \"2022-07-06T03:02:25.241Z\",\n    \"deleted_at\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "orders [admin]",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvbmVjb0Bob3RtYWlsLmNvbSIsImZpcnN0X25hbWUiOiJKb25hcyIsImxhc3RfbmFtZSI6IlVzZXIiLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVEFGRiJdLCJpYXQiOjE2NTcxMTQyMzgsImV4cCI6MTY1NzExNzgzOH0.iRrECtQtdAULV5DCZp6U8xvdfrrmkyvOVMvk3q6U5lg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"comment\":\"teste2\",\r\n    \"products\":[\r\n        {\"id\":\"a14f3b68-33ed-4866-8b16-c8d31bcb9d02\"},\r\n        {\"id\":\"a8b75d52-1685-4e15-a787-53937f2fcfc2\"},\r\n        {\"id\": \"a8b75d52-1685-4e15-a787-53937f2fcfc2\"},\r\n        {\"id\": \"00ff706e-8ca3-4303-b324-706a1642447c\"},\r\n        {\"slug\": \"teste-234567\"}\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/orders/bc59d7e7-4fad-4458-a57d-abe0908e2637",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"orders",
+								"bc59d7e7-4fad-4458-a57d-abe0908e2637"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "orders",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"comment\":\"teste2\",\r\n    \"products\":[\r\n        {\"id\":\"a14f3b68-33ed-4866-8b16-c8d31bcb9d02\"},\r\n        {\"id\":\"a8b75d52-1685-4e15-a787-53937f2fcfc2\"},\r\n        {\"id\": \"a8b75d52-1685-4e15-a787-53937f2fcfc2\"},\r\n        {\"id\": \"00ff706e-8ca3-4303-b324-706a1642447c\"},\r\n        {\"slug\": \"teste-234567\"}\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/orders/86492e0b-1fd3-402c-b5cf-79b0603fc9b1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"orders",
+										"86492e0b-1fd3-402c-b5cf-79b0603fc9b1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2378"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"94a-aaZGQOJ9N7c+W7ZT60umAPOMk8Q\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Jul 2022 03:02:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"86492e0b-1fd3-402c-b5cf-79b0603fc9b1\",\n    \"comment\": \"teste2\",\n    \"customer_id\": \"87c57402-80cc-45ab-9eea-a8a4919cad03\",\n    \"customer_address_id\": \"d5622860-27d1-4d39-8faa-6d4360966adb\",\n    \"created_at\": \"2022-07-06T02:42:15.660Z\",\n    \"updated_at\": \"2022-07-06T03:02:25.241Z\",\n    \"deleted_at\": null,\n    \"products\": [\n        {\n            \"id\": \"a14f3b68-33ed-4866-8b16-c8d31bcb9d02\",\n            \"name\": \"Apple Watch2\",\n            \"description\": \"Smart Watch\",\n            \"slug\": \"apple-a2\",\n            \"sku\": \"app1\",\n            \"price\": 200,\n            \"weight_unit\": \"G\",\n            \"weight\": 200,\n            \"length_unit\": \"MM\",\n            \"length\": 20,\n            \"width\": 20,\n            \"height\": 20,\n            \"minimum_amount\": 1,\n            \"created_at\": \"2022-07-05T02:56:47.972Z\",\n            \"updated_at\": \"2022-07-05T02:56:47.973Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": \"00ff706e-8ca3-4303-b324-706a1642447c\",\n            \"name\": \"teste\",\n            \"description\": \"Smart Watch\",\n            \"slug\": \"teste-2\",\n            \"sku\": \"app3341\",\n            \"price\": 200,\n            \"weight_unit\": \"G\",\n            \"weight\": 200,\n            \"length_unit\": \"MM\",\n            \"length\": 20,\n            \"width\": 20,\n            \"height\": 20,\n            \"minimum_amount\": 1,\n            \"created_at\": \"2022-07-05T03:11:52.748Z\",\n            \"updated_at\": \"2022-07-05T03:11:52.750Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": \"e0b896e1-ee83-475b-8330-d369a4585650\",\n            \"name\": \"teste Add\",\n            \"description\": \"Smart Watch2\",\n            \"slug\": \"teste-234567\",\n            \"sku\": \"app3341\",\n            \"price\": 200,\n            \"weight_unit\": \"G\",\n            \"weight\": 200,\n            \"length_unit\": \"MM\",\n            \"length\": 20,\n            \"width\": 20,\n            \"height\": 20,\n            \"minimum_amount\": 1,\n            \"created_at\": \"2022-07-05T03:31:21.018Z\",\n            \"updated_at\": \"2022-07-05T03:31:21.019Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": \"a8b75d52-1685-4e15-a787-53937f2fcfc2\",\n            \"name\": \"Apple Watch\",\n            \"description\": \"Smart Watch\",\n            \"slug\": \"apple-watch\",\n            \"sku\": \"app1\",\n            \"price\": 200,\n            \"weight_unit\": \"G\",\n            \"weight\": 200,\n            \"length_unit\": \"MM\",\n            \"length\": 20,\n            \"width\": 20,\n            \"height\": 20,\n            \"minimum_amount\": 1,\n            \"created_at\": \"2022-07-05T01:41:20.819Z\",\n            \"updated_at\": \"2022-07-05T12:41:27.367Z\",\n            \"deleted_at\": null\n        }\n    ],\n    \"customer_address\": {\n        \"id\": \"d5622860-27d1-4d39-8faa-6d4360966adb\",\n        \"description\": \"Casa\",\n        \"first_name\": \"Jonas\",\n        \"last_name\": \"Nunes\",\n        \"company\": \"Infnet\",\n        \"street\": \"rua um\",\n        \"number\": 20,\n        \"complement\": \"apto 201\",\n        \"neighboorhood\": \"Vila Isabel\",\n        \"city\": \"Rio de Janeiro\",\n        \"state\": \"RJ\",\n        \"country\": \"Brasil\",\n        \"postcode\": \"20510-080\",\n        \"customer_id\": \"87c57402-80cc-45ab-9eea-a8a4919cad03\",\n        \"created_at\": \"2022-07-05T14:32:51.355Z\",\n        \"updated_at\": \"2022-07-05T14:37:04.453Z\",\n        \"deleted_at\": null\n    },\n    \"customer\": {\n        \"id\": \"87c57402-80cc-45ab-9eea-a8a4919cad03\",\n        \"user_id\": \"057e0255-e3fa-4a6f-8101-510c8e6b060b\",\n        \"identification\": \"12312312312\",\n        \"identification_type\": \"CPF\",\n        \"created_at\": \"2022-07-05T05:32:04.349Z\",\n        \"updated_at\": \"2022-07-05T13:05:46.262Z\",\n        \"deleted_at\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "delete order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvbmVjb0Bob3RtYWlsLmNvbSIsImZpcnN0X25hbWUiOiJKb25hcyIsImxhc3RfbmFtZSI6IlVzZXIiLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVEFGRiJdLCJpYXQiOjE2NTcxMTQyMzgsImV4cCI6MTY1NzExNzgzOH0.iRrECtQtdAULV5DCZp6U8xvdfrrmkyvOVMvk3q6U5lg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/orders/bc59d7e7-4fad-4458-a57d-abe0908e2637",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"orders",
+								"bc59d7e7-4fad-4458-a57d-abe0908e2637"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Health Check",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"chat_id\":\"1152763723\",\r\n    \"photo\":\"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Flamengo_braz_logo.svg/1200px-Flamengo_braz_logo.svg.png\",\r\n    \"caption\": \"legenda\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/messages/photo",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"messages",
+						"photo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Auth",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "flamengo",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "joneco@hotmail.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/auth/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

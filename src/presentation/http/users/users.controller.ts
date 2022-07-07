@@ -16,11 +16,11 @@ import {
   ApiTags
 } from '@nestjs/swagger';
 import { UsersService } from 'src/core/users/services/users.service';
-import { JwtAuthGuard } from 'src/presentation/auth/guards/jwt.guard';
-import { RolesGuard } from 'src/presentation/auth/guards/roles.guard';
-import { Roles } from 'src/presentation/auth/roles/role.decorator';
-import { Role } from 'src/presentation/auth/roles/role.enum';
-import { ResultErrorDto } from 'src/presentation/error/error.dto';
+import { JwtAuthGuard } from '../../auth/guards/jwt.guard';
+import { RolesGuard } from '../../auth/guards/roles.guard';
+import { Roles } from '../../auth/roles/role.decorator';
+import { Role } from '../../auth/roles/role.enum';
+import { ResultErrorDto } from '../../error/error.dto';
 import { DeleteUserAdapter } from './adapters/delete-user.adapter';
 import { GetUserAdapter } from './adapters/get-user.adapter';
 import { ListAllUsersAdapter } from './adapters/list-all-users.adapter';
@@ -44,7 +44,7 @@ export class UsersController {
 
   @ApiResponse({
     status: 201,
-    isArray: false,
+    isArray: true,
     description: 'User succesfully created'
   })
   @ApiResponse({

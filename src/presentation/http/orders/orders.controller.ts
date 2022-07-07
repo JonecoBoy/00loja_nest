@@ -9,12 +9,12 @@ import {
   Put
 } from '@nestjs/common';
 import { ApiBearerAuth, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { JwtAuthGuard } from 'src/presentation/auth/guards/jwt.guard';
-import { RolesGuard } from 'src/presentation/auth/guards/roles.guard';
-import { ResultErrorDto } from 'src/presentation/error/error.dto';
+import { JwtAuthGuard } from '../../auth/guards/jwt.guard';
+import { RolesGuard } from '../../auth/guards/roles.guard';
+import { ResultErrorDto } from '../../error/error.dto';
 import { CreateUserDto } from '../users/create-user.dto';
-import { Roles } from 'src/presentation/auth/roles/role.decorator';
-import { Role } from 'src/presentation/auth/roles/role.enum';
+import { Roles } from '../../auth/roles/role.decorator';
+import { Role } from '../../auth/roles/role.enum';
 import { CreateOrderDto } from './create-order.dto';
 import { OrderListDto } from './list-orders.dto';
 import { FindOrderDto } from './find-order.dto';
@@ -41,7 +41,7 @@ export class OrdersController {
   @ApiResponse({
     status: 201,
     type: CreateOrderDto.Response,
-    isArray: false,
+    isArray: true,
     description: 'Customer address succesfully created'
   })
   @ApiResponse({
@@ -97,6 +97,8 @@ export class OrdersController {
     description: 'Error Product not created'
   })
   @Post()
+  @Roles(Role.ADMIN, Role.USER)
+  @UseGuards(JwtAuthGuard, RolesGuard)
   async create(
     @Body() body: CreateOrderDto.Request
   ): Promise<CreateOrderDto.Response | Order> {
@@ -118,8 +120,6 @@ export class OrdersController {
   })
   @ApiBearerAuth()
   @Put(':id')
-  @Roles(Role.ADMIN, Role.USER)
-  @UseGuards(JwtAuthGuard, RolesGuard)
   async update(
     @Param() id: UpdateOrderDto.RequestParam,
     @Body() body: UpdateOrderDto.RequestBody
